@@ -1,20 +1,19 @@
- html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiffin Box - Premium Tiffin Service</title>
-    <!-- Tailwind CSS CDN for Premium Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
+<body class="bg-gray-50 font-sans text-gray-800 m-0 p-0">
 
-    <!-- HEADER / NAVIGATION -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <!-- Brand Logo & Name -->
             <div class="flex items-center gap-3">
                 <div class="bg-green-600 text-white p-3 rounded-2xl shadow-md shadow-green-200">
                     <i class="fa-solid fa-box-tissue text-2xl animate-bounce"></i>
@@ -25,7 +24,6 @@
                 </div>
             </div>
             
-            <!-- Contact Info -->
             <div class="flex items-center gap-4 bg-green-50 px-4 py-2 rounded-full border border-green-100">
                 <div class="bg-green-600 text-white rounded-full p-2 w-8 h-8 flex items-center justify-center">
                     <i class="fa-solid fa-phone text-xs"></i>
@@ -38,7 +36,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="bg-gradient-to-br from-green-600 to-emerald-700 text-white py-16 px-4 text-center">
         <div class="max-w-3xl mx-auto">
             <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">100% Pure Veg</span>
@@ -48,17 +45,14 @@
         </div>
     </section>
 
-    <!-- SUBSCRIPTION PLANS SECTION -->
     <section id="plans" class="container mx-auto px-4 py-16">
         <div class="text-center mb-12">
             <h3 class="text-3xl font-extrabold text-gray-900">Hamare Subscription Plans</h3>
             <p class="text-gray-500 mt-2">Apni zaroorat ke hisaab se sabse behtareen plan chunein</p>
         </div>
 
-        <!-- Plans Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <!-- Plan 1: Monthly 4 Person -->
             <div class="bg-white border-2 border-green-500 rounded-3xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between">
                 <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase">Best Value</div>
                 <div>
@@ -74,10 +68,9 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Monthly 4 Person Meal (₹10,000)')" class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Monthly 4 Person Meal', 10000)" class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition">Subscribe Now</button>
             </div>
 
-            <!-- Plan 2: Weekly 4 Person -->
             <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
                 <div>
                     <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Weekly Premium</span>
@@ -92,10 +85,9 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly 4 Person Meal (₹2,800)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly 4 Person Meal', 2800)" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
             </div>
 
-            <!-- Plan 3: Monthly 1 Person -->
             <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
                 <div>
                     <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Monthly Solo</span>
@@ -110,10 +102,9 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Monthly 1 Person Meal (₹3,500)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Monthly 1 Person Meal', 3500)" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
             </div>
 
-            <!-- Plan 4: Weekly 1 Person -->
             <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
                 <div>
                     <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Weekly Solo</span>
@@ -128,10 +119,9 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly 1 Person Meal (₹1,000)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly 1 Person Meal', 1000)" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
             </div>
 
-            <!-- Plan 5: Weekly Trial -->
             <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition mx-auto md:col-span-2 lg:col-span-1 w-full">
                 <div>
                     <span class="text-xs font-bold text-orange-600 uppercase tracking-widest bg-orange-50 px-2 py-1 rounded">Trial Pack</span>
@@ -146,17 +136,15 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly Trial 1 Person (₹500)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly Trial 1 Person', 500)" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
             </div>
 
         </div>
     </section>
 
-    <!-- SUBSCRIPTION FORM & DASHBOARD SECTION -->
     <section id="subscription-section" class="bg-gray-100 py-16 px-4">
         <div class="max-w-xl mx-auto">
             
-            <!-- FORM (Pehle ye dikhega) -->
             <div id="sub-form-card" class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
                 <div class="text-center mb-6">
                     <h3 class="text-2xl font-bold text-gray-900">Activation Details</h3>
@@ -167,6 +155,7 @@
                     <div class="mb-4">
                         <label class="block text-sm font-bold text-gray-700 mb-2">Selected Plan</label>
                         <input type="text" id="selectedPlanInput" readonly class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 font-semibold text-green-700 outline-none" placeholder="Pehle upar se koi plan select karein" required>
+                        <input type="hidden" id="selectedAmountInput">
                     </div>
 
                     <div class="mb-4">
@@ -185,82 +174,82 @@
                     </div>
 
                     <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition transform active:scale-95">
-                        <i class="fa-solid fa-bolt mr-2"></i> Activate My Plan
+                        <i class="fa-solid fa-circle-arrow-right mr-2"></i> Proceed to Pay & Activate
                     </button>
                 </form>
             </div>
 
-            <!-- DASHBOARD / STATUS STATUS (Plan active hone ke baad ye dikhega) -->
             <div id="sub-dashboard-card" class="bg-white p-8 rounded-3xl shadow-xl border border-green-200 hidden">
                 <div class="text-center mb-6">
-                    <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-circle-check mr-1"></i> Plan Active</span>
-                    <h3 class="text-2xl font-black text-gray-900 mt-2">Tiffin Delivery Status</h3>
-                    <p class="text-sm text-gray-500">Live Status: Monday to Saturday Tracker</p>
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-clock mr-1"></i> Activation Pending Payment</span>
+                    <h3 class="text-2xl font-black text-gray-900 mt-2">Complete Your Payment</h3>
+                    <p class="text-sm text-gray-500">Niche diye gaye button se payment karke details confirm karein</p>
                 </div>
 
-                <!-- Customer Info Summary -->
                 <div class="bg-gray-50 p-4 rounded-2xl mb-6 text-sm border border-gray-100">
                     <p class="mb-1"><strong>Customer Name:</strong> <span id="dashName" class="text-gray-700"></span></p>
                     <p class="mb-1"><strong>Active Plan:</strong> <span id="dashPlan" class="text-green-700 font-bold"></span></p>
+                    <p class="mb-1"><strong>Total Amount:</strong> <span id="dashAmount" class="text-xl font-black text-gray-900"></span></p>
                     <p><strong>Deliver To:</strong> <span id="dashAddress" class="text-gray-600"></span></p>
                 </div>
 
-                <!-- MEAL TRACKER (CHECKBOXES / TICK SYSTEM) -->
-                <h4 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wide">Weekly Meal Sheet:</h4>
-                <div class="space-y-3">
-                    <!-- Monday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">M</span>
-                            <span class="font-semibold text-gray-700">Monday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
+                <div class="space-y-3 mb-8">
+                    <a id="upiPayBtn" href="#" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 text-center">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Pay Now via UPI App (GPay/PhonePe)
+                    </a>
 
-                    <!-- Tuesday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
-                            <span class="font-semibold text-gray-700">Tuesday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
+                    <a id="whatsappBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 text-center">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Send Order Details to Chetan Bhai
+                    </a>
+                    <p class="text-[11px] text-center text-gray-400 font-medium mt-1">⚠️ UPI payment karne ke baad hi WhatsApp button dabayein.</p>
+                </div>
 
-                    <!-- Wednesday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">W</span>
-                            <span class="font-semibold text-gray-700">Wednesday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
-
-                    <!-- Thursday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
-                            <span class="font-semibold text-gray-700">Thursday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
-
-                    <!-- Friday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">F</span>
-                            <span class="font-semibold text-gray-700">Friday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
-
-                    <!-- Saturday -->
-                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">S</span>
-                            <span class="font-semibold text-gray-700">Saturday Meal</span>
-                        </div>
-                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
-                    </label>
+                <div class="border-t border-gray-100 pt-6">
+                    <h4 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wide">Weekly Meal Sheet (Monday to Saturday):</h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">M</span>
+                                <span class="font-semibold text-gray-700">Monday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
+                                <span class="font-semibold text-gray-700">Tuesday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">W</span>
+                                <span class="font-semibold text-gray-700">Wednesday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
+                                <span class="font-semibold text-gray-700">Thursday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">F</span>
+                                <span class="font-semibold text-gray-700">Friday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                        <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">S</span>
+                                <span class="font-semibold text-gray-700">Saturday Meal</span>
+                            </div>
+                            <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                        </label>
+                    </div>
                 </div>
 
                 <button onclick="resetDemo()" class="mt-6 text-xs text-gray-400 hover:text-red-500 block mx-auto underline">Reset/Change Plan</button>
@@ -269,26 +258,26 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
         <p>&copy; 2026 Tiffin Box. All Rights Reserved. Managed by Chetan.</p>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
         // Jab user kisi plan par click karega
-        function selectPlan(planName) {
-            document.getElementById('selectedPlanInput').value = planName;
+        function selectPlan(planName, amount) {
+            document.getElementById('selectedPlanInput').value = `${planName} (₹${amount})`;
+            document.getElementById('selectedAmountInput').value = amount;
             // Scroll karke seedha form par le jayega
             document.getElementById('subscription-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Jab user form submit karke plan active karega
+        // Jab user form submit karke checkout karega
         function activatePlan(event) {
-            event.preventDefault(); // page reload hone se rokne ke liye
+            event.preventDefault();
 
             // Values fetch karna
             const plan = document.getElementById('selectedPlanInput').value;
+            const amount = document.getElementById('selectedAmountInput').value;
             const name = document.getElementById('userName').value;
             const mobile = document.getElementById('userMobile').value;
             const address = document.getElementById('userAddress').value;
@@ -296,7 +285,38 @@
             // Dashboard me data load karna
             document.getElementById('dashName').innerText = `${name} (${mobile})`;
             document.getElementById('dashPlan').innerText = plan;
+            document.getElementById('dashAmount').innerText = `₹${amount}`;
             document.getElementById('dashAddress').innerText = address;
 
-            // Form ko chupana aur Dashboard ko dikhana
+            // 1. DYNAMIC UPI INTENT LINK GENERATION (Sunita6dec1968@okaxis)
+            const upiId = "Sunita6dec1968@okaxis";
+            const businessName = "Tiffin Box Chetan";
+            const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(businessName)}&am=${amount}&cu=INR&tn=${encodeURIComponent('Tiffin Service Subscription')}`;
+            document.getElementById('upiPayBtn').href = upiUrl;
+
+            // 2. WHATSAPP LINK GENERATION WITH PAYMENT CONFIRMATION TEXT
+            const whatsappMessage = `*New Tiffin Subscription Request!* 🍱%0A%0A` +
+                                    `*Name:* ${encodeURIComponent(name)}%0A` +
+                                    `*Mobile:* ${encodeURIComponent(mobile)}%0A` +
+                                    `*Selected Plan:* ${encodeURIComponent(plan)}%0A` +
+                                    `*Amount:* ₹${amount}%0A` +
+                                    `*Delivery Address:* ${encodeURIComponent(address)}%0A%0A` +
+                                    `*Payment Status:* Done / Processing via UPI App. Please confirm and activate my meal tracker!`;
             
+            const whatsappUrl = `https://wa.me/919318464085?text=${whatsappMessage}`;
+            document.getElementById('whatsappBtn').href = whatsappUrl;
+
+            // Form ko chupana aur Dashboard ko dikhana
+            document.getElementById('sub-form-card').classList.add('hidden');
+            document.getElementById('sub-dashboard-card').classList.remove('hidden');
+        }
+
+        // Reset/Change Plan
+        function resetDemo() {
+            document.getElementById('activationForm').reset();
+            document.getElementById('sub-form-card').classList.remove('hidden');
+            document.getElementById('sub-dashboard-card').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
