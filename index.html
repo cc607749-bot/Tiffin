@@ -3,54 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghar Ka Swaad | Tiffin Service</title>
+    <title>Tiffin Box - Premium Tiffin Service</title>
+    <!-- Tailwind CSS CDN for Premium Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md p-5 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-orange-600">Ghar Ka Swaad</h1>
-        <a href="tel:+919999999999" class="bg-orange-600 text-white px-4 py-2 rounded-full font-bold">Call Now</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="text-center py-16 px-4">
-        <h2 class="text-4xl font-extrabold text-gray-800">Fresh & Healthy Tiffin at your Doorstep</h2>
-        <p class="text-gray-600 mt-4 text-lg">Delicious home-cooked meals delivered daily.</p>
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <!-- Brand Logo & Name -->
+            <div class="flex items-center gap-3">
+                <div class="bg-green-600 text-white p-3 rounded-2xl shadow-md shadow-green-200">
+                    <i class="fa-solid fa-box-tissue text-2xl animate-bounce"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-tight text-gray-900">TIFFIN <span class="text-green-600">BOX</span></h1>
+                    <p class="text-xs text-gray-500 font-semibold uppercase tracking-widest">Ghar Jaisa Swad</p>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="flex items-center gap-4 bg-green-50 px-4 py-2 rounded-full border border-green-100">
+                <div class="bg-green-600 text-white rounded-full p-2 w-8 h-8 flex items-center justify-center">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500 font-medium">Owner: Chetan</p>
+                    <a href="tel:9318464085" class="text-sm font-bold text-green-700 hover:underline">9318464085</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Pricing Section -->
-    <section class="max-w-5xl mx-auto pb-16 px-4">
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- Plan 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-orange-500">
-                <h3 class="text-2xl font-bold">Daily Lunch/Dinner</h3>
-                <p class="text-gray-500 mt-2">Perfect for daily office/students.</p>
-                <p class="text-5xl font-bold text-orange-600 my-6">₹3,500 <span class="text-lg font-normal text-gray-400">/month</span></p>
-                <ul class="space-y-3 text-gray-700 mb-8">
-                    <li>✔ Fresh Roti & Sabzi</li>
-                    <li>✔ Salad & Pickle Included</li>
-                    <li>✔ Free Home Delivery</li>
-                </ul>
-                <button class="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-black">Subscribe Now</button>
-            </div>
-
-            <!-- Plan 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-green-500">
-                <h3 class="text-2xl font-bold">Family Combo</h3>
-                <p class="text-gray-500 mt-2">Best for small families.</p>
-                <p class="text-5xl font-bold text-green-600 my-6">₹10,000 <span class="text-lg font-normal text-gray-400">/month</span></p>
-                <ul class="space-y-3 text-gray-700 mb-8">
-                    <li>✔ Full Meal for 4 People</li>
-                    <li>✔ Extra Dishes on Sundays</li>
-                    <li>✔ Priority Delivery</li>
-                </ul>
-                <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700">Subscribe Now</button>
-            </div>
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-br from-green-600 to-emerald-700 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">100% Pure Veg</span>
+            <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4 leading-tight">Ghar Ka Shuddh Aur Swadist Khana, Rozana!</h2>
+            <p class="text-green-100 text-lg mb-8">Monday to Saturday fresh aur healthy meal aapke darwaze par. Aaj hi apna plan choose karein.</p>
+            <a href="#plans" class="bg-white text-green-700 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-green-50 transition transform hover:-translate-y-1">View Subscription Plans</a>
         </div>
     </section>
 
+    <!-- SUBSCRIPTION PLANS SECTION -->
+    <section id="plans" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-extrabold text-gray-900">Hamare Subscription Plans</h3>
+            <p class="text-gray-500 mt-2">Apni zaroorat ke hisaab se sabse behtareen plan chunein</p>
+        </div>
+
+        <!-- Plans Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Plan 1: Monthly 4 Person -->
+            <div class="bg-white border-2 border-green-500 rounded-3xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase">Best Value</div>
+                <div>
+                    <span class="text-xs font-bold text-green-600 uppercase tracking-widest bg-green-50 px-2 py-1 rounded">Monthly Premium</span>
+                    <h4 class="text-2xl font-bold mt-2 text-gray-800">4 Person Family Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-gray-900">₹10,000</span>
+                        <span class="text-gray-500 text-sm">/ Month</span>
+                    </div>
+                    <ul class="space-y-3 my-6 text-sm text-gray-600">
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
+                    </ul>
+                </div>
+                <button onclick="selectPlan('Monthly 4 Person Meal (₹10,000)')" class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition">Subscribe Now</button>
+            </div>
+
+            <!-- Plan 2: Weekly 4 Person -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Weekly Premium</span>
+                    <h4 class="text-2xl font-bold mt-2 text-gray-800">4 Person Family Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-gray-900">₹2,800</span>
+                        <span class="text-gray-500 text-sm">/ Week</span>
+                    </div>
+                    <ul class="space-y-3 my-6 text-sm text-gray-600">
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
+                    </ul>
+                </div>
+                <button onclick="selectPlan('Weekly 4 Person Meal (₹2,800)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+            </div>
+
+            <!-- Plan 3: Monthly 1 Person -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Monthly Solo</span>
+                    <h4 class="text-2xl font-bold mt-2 text-gray-800">1 Person Single Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-gray-900">₹3,500</span>
+                        <span class="text-gray-500 text-sm">/ Month</span>
+                    </div>
+                    <ul class="space-y-3 my-6 text-sm text-gray-600">
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
+                    </ul>
+                </div>
+                <button onclick="selectPlan('Monthly 1 Person Meal (₹3,500)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+            </div>
+
+            <!-- Plan 4: Weekly 1 Person -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded">Weekly Solo</span>
+                    <h4 class="text-2xl font-bold mt-2 text-gray-800">1 Person Single Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-gray-900">₹1,000</span>
+                        <span class="text-gray-500 text-sm">/ Week</span>
+                    </div>
+                    <ul class="space-y-3 my-6 text-sm text-gray-600">
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
+                    </ul>
+                </div>
+                <button onclick="selectPlan('Weekly 1 Person Meal (₹1,000)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+            </div>
+
+            <!-- Plan 5: Weekly Trial -->
+            <div class="bg-white border border-gray-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition mx-auto md:col-span-2 lg:col-span-1 w-full">
+                <div>
+                    <span class="text-xs font-bold text-orange-600 uppercase tracking-widest bg-orange-50 px-2 py-1 rounded">Trial Pack</span>
+                    <h4 class="text-2xl font-bold mt-2 text-gray-800">1 Person Weekly Trial</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-gray-900">₹500</span>
+                        <span class="text-gray-500 text-sm">/ Week</span>
+                    </div>
+                    <ul class="space-y-3 my-6 text-sm text-gray-600">
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Best for testing taste</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 100% Pure Veg & Hygienic</li>
+                    </ul>
+                </div>
+                <button onclick="selectPlan('Weekly Trial 1 Person (₹500)')" class="w-full bg-gray-800 text-white font-bold py-3 rounded-xl hover:bg-gray-900 transition">Subscribe Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SUBSCRIPTION FORM & DASHBOARD SECTION -->
+    <section id="subscription-section" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-xl mx-auto">
+            
+            <!-- FORM (Pehle ye dikhega) -->
+            <div id="sub-form-card" class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900">Activation Details</h3>
+                    <p class="text-sm text-gray-500 mt-1">Apna address aur details daal kar plan active karein</p>
+                </div>
+                
+                <form id="activationForm" onsubmit="activatePlan(event)">
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Selected Plan</label>
+                        <input type="text" id="selectedPlanInput" readonly class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 font-semibold text-green-700 outline-none" placeholder="Pehle upar se koi plan select karein" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="userName" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none" placeholder="Apna Naam Likhein" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Mobile Number</label>
+                        <input type="tel" id="userMobile" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none" placeholder="Mobile Number daalein" required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Delivery Address</label>
+                        <textarea id="userAddress" rows="3" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none" placeholder="Poora Pata (Address) daalein" required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition transform active:scale-95">
+                        <i class="fa-solid fa-bolt mr-2"></i> Activate My Plan
+                    </button>
+                </form>
+            </div>
+
+            <!-- DASHBOARD / STATUS STATUS (Plan active hone ke baad ye dikhega) -->
+            <div id="sub-dashboard-card" class="bg-white p-8 rounded-3xl shadow-xl border border-green-200 hidden">
+                <div class="text-center mb-6">
+                    <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-circle-check mr-1"></i> Plan Active</span>
+                    <h3 class="text-2xl font-black text-gray-900 mt-2">Tiffin Delivery Status</h3>
+                    <p class="text-sm text-gray-500">Live Status: Monday to Saturday Tracker</p>
+                </div>
+
+                <!-- Customer Info Summary -->
+                <div class="bg-gray-50 p-4 rounded-2xl mb-6 text-sm border border-gray-100">
+                    <p class="mb-1"><strong>Customer Name:</strong> <span id="dashName" class="text-gray-700"></span></p>
+                    <p class="mb-1"><strong>Active Plan:</strong> <span id="dashPlan" class="text-green-700 font-bold"></span></p>
+                    <p><strong>Deliver To:</strong> <span id="dashAddress" class="text-gray-600"></span></p>
+                </div>
+
+                <!-- MEAL TRACKER (CHECKBOXES / TICK SYSTEM) -->
+                <h4 class="font-bold text-gray-800 mb-3 text-sm uppercase tracking-wide">Weekly Meal Sheet:</h4>
+                <div class="space-y-3">
+                    <!-- Monday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">M</span>
+                            <span class="font-semibold text-gray-700">Monday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+
+                    <!-- Tuesday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
+                            <span class="font-semibold text-gray-700">Tuesday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+
+                    <!-- Wednesday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">W</span>
+                            <span class="font-semibold text-gray-700">Wednesday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+
+                    <!-- Thursday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">T</span>
+                            <span class="font-semibold text-gray-700">Thursday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+
+                    <!-- Friday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">F</span>
+                            <span class="font-semibold text-gray-700">Friday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+
+                    <!-- Saturday -->
+                    <label class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-green-50 text-green-700 font-bold flex items-center justify-center text-xs">S</span>
+                            <span class="font-semibold text-gray-700">Saturday Meal</span>
+                        </div>
+                        <input type="checkbox" class="w-6 h-6 rounded-md text-green-600 focus:ring-green-500 border-gray-300 accent-green-600">
+                    </label>
+                </div>
+
+                <button onclick="resetDemo()" class="mt-6 text-xs text-gray-400 hover:text-red-500 block mx-auto underline">Reset/Change Plan</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
+        <p>&copy; 2026 Tiffin Box. All Rights Reserved. Managed by Chetan.</p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Jab user kisi plan par click karega
+        function selectPlan(planName) {
+            document.getElementById('selectedPlanInput').value = planName;
+            // Scroll karke seedha form par le jayega
+            document.getElementById('subscription-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Jab user form submit karke plan active karega
+        function activatePlan(event) {
+            event.preventDefault(); // page reload hone se rokne ke liye
+
+            // Values fetch karna
+            const plan = document.getElementById('selectedPlanInput').value;
+            const name = document.getElementById('userName').value;
+            const mobile = document.getElementById('userMobile').value;
+            const address = document.getElementById('userAddress').value;
+
+            // Dashboard me data load karna
+            document.getElementById('dashName').innerText = `${name} (${mobile})`;
+            document.getElementById('dashPlan').innerText = plan;
+            document.getElementById('dashAddress').innerText = address;
+
+            // Form ko chupana aur Dashboard ko dikhana
+            document.getElementById('sub-form-card').classList.add('hidden');
+            document.getElementById('sub-dashboard-card').classList.remove('hidden');
+        }
+
+        // Reset karne ke liye function
+        function resetDemo() {
+            document.getElementById('activationForm').reset();
+            document.getElementById('sub-form-card').classList.remove('hidden');
+            document.getElementById('sub-dashboard-card').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
