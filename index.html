@@ -46,7 +46,7 @@
     <section id="plans" class="container mx-auto px-4 py-20">
         <div class="text-center mb-16">
             <h3 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight">Premium Subscription Plans</h3>
-            <p class="text-slate-500 mt-2 text-sm md:text-base">Ghar jaisa swad, bina kisi jhanjhat ke</p>
+            <p class="text-slate-500 mt-2 text-sm md:text-base">Ghar jaisa swad, bina kisi jhanjhat ke (+18% GST Extra)</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -58,12 +58,12 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹10,000</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Month (Inc. GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month (+18% GST)</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
-                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Shuddh Vegetarian (No Garlic-Onion option available)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Shuddh Vegetarian (No Garlic-Onion option)</li>
                     </ul>
                 </div>
                 <button onclick="selectPlan('Monthly 4 Person Meal', 10000)" class="w-full bg-green-600 text-white font-bold py-3.5 rounded-xl hover:bg-green-700 transition shadow-lg shadow-green-100">Subscribe Now</button>
@@ -75,7 +75,7 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹2,800</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (Inc. GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
@@ -92,7 +92,7 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹3,500</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Month (Inc. GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month (+18% GST)</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
@@ -109,7 +109,7 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹1,000</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (Inc. GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
@@ -126,7 +126,7 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Weekly Trial</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹500</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (Inc. GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Best for testing taste & quality</li>
@@ -201,7 +201,7 @@
                             <span id="invBase">₹0.00</span>
                         </div>
                         <div class="flex justify-between text-slate-600">
-                            <span>GST (18% Inclusive):</span>
+                            <span>GST Extra (18%):</span>
                             <span id="invGst">₹0.00</span>
                         </div>
                         <div class="flex justify-between text-base font-black text-slate-950 pt-2 border-t border-slate-200">
@@ -222,44 +222,25 @@
                         <i class="fa-solid fa-circle-check text-3xl"></i>
                     </div>
                     <h3 class="text-3xl font-black text-slate-950">Thank You! 🎉</h3>
-                    <p class="text-sm font-semibold text-emerald-600 mt-1">Payment Process Initiated Successfully</p>
-                    <p class="text-xs text-slate-400 mt-2">Apne order ki validation aur automated receipt Chetan Bhai ko WhatsApp par bhejein.</p>
+                    <p class="text-sm font-semibold text-emerald-600 mt-1">Payment & Receipt Generated Successfully</p>
+                    <p class="text-xs text-slate-400 mt-2">Niche diye gaye button se Chetan Bhai ko WhatsApp par Tax Invoice receipt forward karein.</p>
                 </div>
 
                 <div class="mb-8">
                     <a id="whatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-extrabold py-4 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2 text-center text-sm uppercase tracking-wider">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Send Automated Receipt on WhatsApp
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Send Tax Receipt on WhatsApp
                     </a>
-                    <span class="block text-[10px] text-center text-amber-600 font-bold mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Urgent: Is button ko daba kar apna Pata aur Payment screen confirm karein!</span>
+                    <span class="block text-[10px] text-center text-amber-600 font-bold mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Urgent: Invoice confirm karne ke liye WhatsApp dabaayein!</span>
                 </div>
 
                 <div class="border-t border-slate-100 pt-6">
                     <div class="flex justify-between items-center mb-4">
-                        <h4 class="font-black text-slate-950 text-xs uppercase tracking-wider">Weekly Meal Sheet Tracker:</h4>
-                        <span class="bg-green-100 text-green-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Live Tracker Active</span>
+                        <h4 class="font-black text-slate-950 text-xs uppercase tracking-wider">Your Weekly Meal Tracker:</h4>
+                        <span class="bg-green-100 text-green-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Locked Progress System</span>
                     </div>
                     
-                    <div class="space-y-3">
-                        <script>
-                            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                            // Customer ke device se aaj ka din fetch karega (e.g., "Wednesday")
-                            const currentDayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-
-                            days.forEach(day => {
-                                // Agar loop wala day aaj ke day se match karega toh 'checked' attribute automatic add hoga
-                                const isChecked = (day === currentDayName) ? 'checked' : '';
-                                document.write(`
-                                    <label class="flex items-center justify-between p-3.5 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100/70 transition select-none">
-                                        <div class="flex items-center gap-3">
-                                            <span class="w-7 h-7 rounded-lg bg-green-600 text-white font-bold flex items-center justify-center text-xs">${day[0]}</span>
-                                            <span class="font-bold text-xs text-slate-700">${day} Delivery Meal</span>
-                                        </div>
-                                        <input type="checkbox" ${isChecked} class="w-5 h-5 rounded border-slate-300 text-green-600 focus:ring-green-500 accent-green-600">
-                                    </label>
-                                `);
-                            });
-                        </script>
-                    </div>
+                    <div id="dynamicTrackerDays" class="space-y-3">
+                        </div>
                 </div>
 
                 <button onclick="resetDemo()" class="mt-8 text-xs text-slate-400 hover:text-red-500 block mx-auto underline font-medium">Book Another Subscription / Reset</button>
@@ -275,6 +256,9 @@
 
     <script>
         let currentUpiLink = "";
+        let finalBase = 0;
+        let finalGst = 0;
+        let finalTotal = 0;
 
         function selectPlan(planName, amount) {
             document.getElementById('selectedPlanInput').value = `${planName} (₹${amount})`;
@@ -291,20 +275,23 @@
             const mobile = document.getElementById('userMobile').value;
             const address = document.getElementById('userAddress').value;
 
-            const baseAmount = (amount / 1.18);
-            const gstAmount = amount - baseAmount;
+            // 18% GST Extra (Exclusive calculation)
+            finalBase = amount;
+            finalGst = amount * 0.18;
+            finalTotal = finalBase + finalGst;
 
             document.getElementById('invName').innerText = name;
             document.getElementById('invMobile').innerText = mobile;
             document.getElementById('invPlan').innerText = plan;
             document.getElementById('invAddress').innerText = address;
-            document.getElementById('invBase').innerText = `₹${baseAmount.toFixed(2)}`;
-            document.getElementById('invGst').innerText = `₹${gstAmount.toFixed(2)}`;
-            document.getElementById('invTotal').innerText = `₹${amount.toFixed(0)}`;
+            document.getElementById('invBase').innerText = `₹${finalBase.toFixed(2)}`;
+            document.getElementById('invGst').innerText = `₹${finalGst.toFixed(2)}`;
+            document.getElementById('invTotal').innerText = `₹${finalTotal.toFixed(0)}`;
 
             const upiId = "Sunita6dec1968@okaxis";
             const businessName = "Tiffin Box Chetan";
-            currentUpiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(businessName)}&am=${amount}&cu=INR&tn=${encodeURIComponent('Premium Tiffin Service Bill ' + plan)}`;
+            // Deep Link targeting the full calculated amount with GST
+            currentUpiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(businessName)}&am=${finalTotal.toFixed(0)}&cu=INR&tn=${encodeURIComponent('Premium Tiffin Service Bill ' + plan)}`;
 
             document.getElementById('sub-form-card').classList.add('hidden');
             document.getElementById('sub-checkout-card').classList.remove('hidden');
@@ -314,34 +301,60 @@
             window.location.href = currentUpiLink;
 
             const plan = document.getElementById('selectedPlanInput').value;
-            const amount = document.getElementById('selectedAmountInput').value;
             const name = document.getElementById('userName').value;
             const mobile = document.getElementById('userMobile').value;
             const address = document.getElementById('userAddress').value;
-            
-            const baseAmount = (parseFloat(amount) / 1.18).toFixed(2);
-            const gstAmount = (parseFloat(amount) - parseFloat(baseAmount)).toFixed(2);
 
+            // Structure professional GST exclusive text message layout for WhatsApp
             const whatsappMessage = `🧾 *TIFFIN BOX - TAX INVOICE RECEIPT* 🍱%0A` +
                                     `--------------------------------------------%0A` +
                                     `*Customer:* ${encodeURIComponent(name)} (${encodeURIComponent(mobile)})%0A` +
                                     `*Plan Selected:* ${encodeURIComponent(plan)}%0A` +
                                     `*Delivery Route Address:* ${encodeURIComponent(address)}%0A` +
                                     `--------------------------------------------%0A` +
-                                    `*Base Price:* ₹${baseAmount}%0A` +
-                                    `*GST Amount (18% Inc.):* ₹${gstAmount}%0A` +
-                                    `*Net Total Paid:* ₹${amount}%0A` +
+                                    `*Base Plan Price:* ₹${finalBase.toFixed(2)}%0A` +
+                                    `*GST Amount (18% Extra):* ₹${finalGst.toFixed(2)}%0A` +
+                                    `*Net Total Paid via UPI:* ₹${finalTotal.toFixed(0)}%0A` +
                                     `--------------------------------------------%0A` +
-                                    `*Payment Status:* ✅ SUCCESSFUL / INITIATED VIA UPI APP.%0A%0A` +
-                                    `Please approve my delivery tracker sheet on the dashboard!`;
+                                    `*Payment Status:* ✅ SUCCESSFUL / AUTHORIZED%0A%0A` +
+                                    `Thank you for choosing premium quality homemade meals!`;
             
             const whatsappUrl = `https://wa.me/919318464085?text=${whatsappMessage}`;
             document.getElementById('whatsappBtn').href = whatsappUrl;
+
+            // Render safe auto-ticking system before switching view
+            buildAutomaticTracker();
 
             setTimeout(() => {
                 document.getElementById('sub-checkout-card').classList.add('hidden');
                 document.getElementById('sub-success-card').classList.remove('hidden');
             }, 1200);
+        }
+
+        // Auto generation logic for progress days tracker
+        function buildAutomaticTracker() {
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            // Gets user's local live day name (e.g., "Wednesday")
+            const currentDayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+            const currentDayIndex = days.indexOf(currentDayName); 
+
+            let trackerHtml = "";
+            days.forEach((day, index) => {
+                // Agar loop wala day aaj ka ya bita hua day hai, toh checkmark system automatically lagaye
+                const isCompleted = (index <= currentDayIndex && currentDayIndex !== -1);
+                const isChecked = isCompleted ? 'checked' : '';
+                
+                trackerHtml += `
+                    <label class="flex items-center justify-between p-3.5 ${isCompleted ? 'bg-emerald-50/60 border-emerald-200' : 'bg-slate-50 border-slate-200'} border rounded-xl select-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg ${isCompleted ? 'bg-green-600' : 'bg-slate-400'} text-white font-bold flex items-center justify-center text-xs">${day[0]}</span>
+                            <span class="font-bold text-xs ${isCompleted ? 'text-slate-900' : 'text-slate-500'}">${day} Delivery Meal ${isCompleted ? '(Completed)' : '(Pending)'}</span>
+                        </div>
+                        <input type="checkbox" ${isChecked} disabled class="w-5 h-5 rounded border-slate-300 text-green-600 accent-green-600 cursor-not-allowed">
+                    </label>
+                `;
+            });
+            document.getElementById('dynamicTrackerDays').innerHTML = trackerHtml;
         }
 
         function resetDemo() {
@@ -353,4 +366,5 @@
     </script>
 </body>
 </html>
+
     
