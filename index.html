@@ -9,11 +9,12 @@
 </head>
 <body class="bg-slate-50 font-sans text-gray-800 m-0 p-0 antialiased">
 
+    <!-- Header Section -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="bg-gradient-to-tr from-green-600 to-emerald-500 text-white p-3 rounded-2xl shadow-lg shadow-green-200">
-                    <i class="fa-solid fa-box-tissue text-2xl"></i>
+                    <i class="fa-solid fa-utensils text-2xl"></i>
                 </div>
                 <div>
                     <h1 class="text-2xl font-black tracking-tight text-gray-950">TIFFIN <span class="text-green-600">BOX</span></h1>
@@ -33,24 +34,27 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-950 text-white py-20 px-4 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent"></div>
         <div class="max-w-3xl mx-auto relative z-10">
             <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-emerald-500/30">100% Pure Veg & Hygienic</span>
             <h2 class="text-4xl md:text-6xl font-black mt-6 mb-4 leading-tight tracking-tight">Ghar Ka Shuddh Khana, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">Rozana Aapke Darwaze Par!</span></h2>
-            <p class="text-slate-400 text-base md:text-lg mb-8 max-w-xl mx-auto">Monday to Saturday fresh aur healthy meal options. Aaj hi apna premium plan active karein.</p>
+            <p class="text-slate-400 text-base md:text-lg mb-8 max-w-xl mx-auto">Monday to Saturday fresh aur healthy meal options. Aaj hi apna plan select karein aur WhatsApp par confirm karein.</p>
             <a href="#plans" class="bg-white text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-xl hover:bg-green-50 transition transform hover:-translate-y-0.5 inline-block text-sm uppercase tracking-wider">View Subscription Plans</a>
         </div>
     </section>
 
+    <!-- Plans Section -->
     <section id="plans" class="container mx-auto px-4 py-20">
         <div class="text-center mb-16">
-            <h3 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight">Premium Subscription Plans</h3>
-            <p class="text-slate-500 mt-2 text-sm md:text-base">Ghar jaisa swad, bina kisi jhanjhat ke (+18% GST Extra)</p>
+            <h3 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight">Subscription Plans</h3>
+            <p class="text-slate-500 mt-2 text-sm md:text-base">Ghar jaisa swad, bina kisi jhanjhat ke (Monday to Saturday Delivery)</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
+            <!-- Plan 1 -->
             <div class="bg-white border-2 border-green-500 rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col justify-between transform hover:scale-[1.02] transition duration-300">
                 <div class="absolute top-0 right-0 bg-green-500 text-white text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">Best Value</div>
                 <div>
@@ -58,24 +62,25 @@
                     <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹10,000</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Month (+18% GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
-                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Shuddh Vegetarian (No Garlic-Onion option)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Shuddh Vegetarian Food</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Monthly 4 Person Meal', 10000)" class="w-full bg-green-600 text-white font-bold py-3.5 rounded-xl hover:bg-green-700 transition shadow-lg shadow-green-100">Subscribe Now</button>
+                <button onclick="selectPlan('Monthly Premium (4 Person Family Meal - ₹10,000)')" class="w-full bg-green-600 text-white font-bold py-3.5 rounded-xl hover:bg-green-700 transition shadow-lg shadow-green-100">Subscribe Now</button>
             </div>
 
+            <!-- Plan 2 -->
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
                 <div>
                     <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Weekly Premium</span>
                     <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹2,800</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Meal</li>
@@ -83,16 +88,17 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Pure Veg & Hygienic Food</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly 4 Person Meal', 2800)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly Premium (4 Person Family Meal - ₹2,800)')" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
             </div>
 
+            <!-- Plan 3 -->
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
                 <div>
                     <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Monthly Solo</span>
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹3,500</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Month (+18% GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
@@ -100,16 +106,17 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Daily Fresh Menu Packing</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Monthly 1 Person Meal', 3500)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Monthly Solo (1 Person Single Meal - ₹3,500)')" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
             </div>
 
+            <!-- Plan 4 -->
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
                 <div>
                     <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Weekly Solo</span>
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹1,000</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Single Meal</li>
@@ -117,16 +124,17 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Budget Friendly Healthy Option</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly 1 Person Meal', 1000)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly Solo (1 Person Single Meal - ₹1,000)')" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
             </div>
 
+            <!-- Plan 5 -->
             <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300 mx-auto md:col-span-2 lg:col-span-1 w-full">
                 <div>
                     <span class="text-[10px] font-bold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded-md">Trial Pack</span>
                     <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Weekly Trial</h4>
                     <div class="my-4">
                         <span class="text-4xl font-black text-slate-950">₹500</span>
-                        <span class="text-slate-400 text-xs font-semibold">/ Week (+18% GST)</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
                     <ul class="space-y-3.5 my-6 text-sm text-slate-600">
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Best for testing taste & quality</li>
@@ -134,26 +142,29 @@
                         <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> No commitments, auto-expires</li>
                     </ul>
                 </div>
-                <button onclick="selectPlan('Weekly Trial 1 Person', 500)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+                <button onclick="selectPlan('Weekly Trial (1 Person Weekly Trial - ₹500)')" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
             </div>
 
         </div>
     </section>
 
+    <!-- Activation Form Section -->
     <section id="subscription-section" class="bg-slate-100 py-20 px-4 border-t border-slate-200/60">
         <div class="max-w-xl mx-auto">
             
-            <div id="sub-form-card" class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
                 <div class="text-center mb-8">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-paper-plane text-lg"></i>
+                    </div>
                     <h3 class="text-2xl font-black text-slate-950">Activation Details</h3>
-                    <p class="text-sm text-slate-400 mt-1">Apna address aur details daal kar check-out karein</p>
+                    <p class="text-sm text-slate-400 mt-1">Apna address aur details daal kar WhatsApp par order confirm karein</p>
                 </div>
                 
-                <form id="activationForm" onsubmit="processToCheckout(event)">
+                <form onsubmit="sendWhatsAppConfirmation(event)">
                     <div class="mb-5">
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Selected Plan</label>
                         <input type="text" id="selectedPlanInput" readonly class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 font-bold text-green-700 outline-none" placeholder="Pehle upar se koi plan select karein" required>
-                        <input type="hidden" id="selectedAmountInput">
                     </div>
 
                     <div class="mb-5">
@@ -171,200 +182,52 @@
                         <textarea id="userAddress" rows="3" class="w-full border border-slate-200 rounded-xl px-4 py-3.5 focus:border-green-500 focus:ring-4 focus:ring-green-100 outline-none transition" placeholder="Poora Pata (Address) daalein jahan tiffin bhejna hai" required></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-4 rounded-xl shadow-lg transition transform active:scale-95 text-sm uppercase tracking-wider">
-                        <i class="fa-solid fa-receipt mr-2 text-slate-400"></i> Generate Premium Invoice
+                    <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-extrabold py-4 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2 text-center text-sm uppercase tracking-wider">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Confirm Subscription on WhatsApp
                     </button>
                 </form>
-            </div>
-
-            <div id="sub-checkout-card" class="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 hidden">
-                <div class="text-center mb-6">
-                    <span class="bg-blue-50 text-blue-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-blue-200"><i class="fa-solid fa-wallet mr-1"></i> Secure UPI Gateway</span>
-                    <h3 class="text-2xl font-black text-slate-950 mt-3">Tax Invoice Summary</h3>
-                    <p class="text-xs text-slate-400 mt-1">Niche diye gaye button se secure payment karein</p>
-                </div>
-
-                <div class="bg-gradient-to-b from-slate-50 to-slate-100 p-6 rounded-2xl mb-6 border border-slate-200 relative overflow-hidden">
-                    <div class="absolute -right-6 -bottom-6 opacity-5 text-slate-900 pointer-events-none">
-                        <i class="fa-solid fa-receipt text-9xl"></i>
-                    </div>
-                    <div class="space-y-2 text-sm border-b border-dashed border-slate-300 pb-4 mb-4">
-                        <p class="flex justify-between text-slate-500"><span>Billed To:</span> <span id="invName" class="font-bold text-slate-900"></span></p>
-                        <p class="flex justify-between text-slate-500"><span>Mobile:</span> <span id="invMobile" class="font-bold text-slate-900"></span></p>
-                        <p class="flex justify-between text-slate-500"><span>Service Plan:</span> <span id="invPlan" class="font-bold text-slate-900"></span></p>
-                        <p class="flex justify-between text-slate-500"><span>Address:</span> <span id="invAddress" class="font-medium text-slate-700 text-right max-w-[200px] truncate"></span></p>
-                    </div>
-                    
-                    <div class="space-y-2 text-sm font-medium">
-                        <div class="flex justify-between text-slate-600">
-                            <span>Base Amount:</span>
-                            <span id="invBase">₹0.00</span>
-                        </div>
-                        <div class="flex justify-between text-slate-600">
-                            <span>GST Extra (18%):</span>
-                            <span id="invGst">₹0.00</span>
-                        </div>
-                        <div class="flex justify-between text-base font-black text-slate-950 pt-2 border-t border-slate-200">
-                            <span>Net Total Amount:</span>
-                            <span id="invTotal">₹0.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <button id="mainUpiBtn" onclick="triggerPayment()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2 text-center text-sm uppercase tracking-wider animate-pulse">
-                    <i class="fa-solid fa-mobile-screen-button text-base"></i> Click Here to Pay via UPI App
-                </button>
-            </div>
-
-            <div id="sub-success-card" class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-emerald-500 hidden transform scale-100 transition duration-500">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-green-400 text-white rounded-full flex items-center justify-center mx-auto shadow-xl shadow-green-100 mb-4 animate-bounce">
-                        <i class="fa-solid fa-circle-check text-3xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-black text-slate-950">Thank You! 🎉</h3>
-                    <p class="text-sm font-semibold text-emerald-600 mt-1">Payment & Receipt Generated Successfully</p>
-                    <p class="text-xs text-slate-400 mt-2">Niche diye gaye button se Chetan Bhai ko WhatsApp par Tax Invoice receipt forward karein.</p>
-                </div>
-
-                <div class="mb-8">
-                    <a id="whatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-extrabold py-4 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2 text-center text-sm uppercase tracking-wider">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Send Tax Receipt on WhatsApp
-                    </a>
-                    <span class="block text-[10px] text-center text-amber-600 font-bold mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Urgent: Invoice confirm karne ke liye WhatsApp dabaayein!</span>
-                </div>
-
-                <div class="border-t border-slate-100 pt-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h4 class="font-black text-slate-950 text-xs uppercase tracking-wider">Your Weekly Meal Tracker:</h4>
-                        <span class="bg-green-100 text-green-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">Locked Progress System</span>
-                    </div>
-                    
-                    <div id="dynamicTrackerDays" class="space-y-3">
-                        </div>
-                </div>
-
-                <button onclick="resetDemo()" class="mt-8 text-xs text-slate-400 hover:text-red-500 block mx-auto underline font-medium">Book Another Subscription / Reset</button>
             </div>
 
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="bg-slate-950 text-slate-500 py-10 text-center text-xs border-t border-slate-900">
         <p class="font-bold text-slate-400">&copy; 2026 TIFFIN BOX. All Rights Reserved.</p>
         <p class="mt-1 text-slate-600">Premium Taste Verified & Handcrafted by Chetan Bhai.</p>
     </footer>
 
     <script>
-        let currentUpiLink = "";
-        let finalBase = 0;
-        let finalGst = 0;
-        let finalTotal = 0;
-
-        function selectPlan(planName, amount) {
-            document.getElementById('selectedPlanInput').value = `${planName} (₹${amount})`;
-            document.getElementById('selectedAmountInput').value = amount;
+        function selectPlan(planDetails) {
+            document.getElementById('selectedPlanInput').value = planDetails;
             document.getElementById('subscription-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function processToCheckout(event) {
+        function sendWhatsAppConfirmation(event) {
             event.preventDefault();
 
             const plan = document.getElementById('selectedPlanInput').value;
-            const amount = parseFloat(document.getElementById('selectedAmountInput').value);
             const name = document.getElementById('userName').value;
             const mobile = document.getElementById('userMobile').value;
             const address = document.getElementById('userAddress').value;
 
-            // 18% GST Extra (Exclusive calculation)
-            finalBase = amount;
-            finalGst = amount * 0.18;
-            finalTotal = finalBase + finalGst;
+            // Simple WhatsApp Text Layout without any complex receipt or GST billing lines
+            const message = `🍱 *NEW TIFFIN SUBSCRIPTION* 🍱%0A` +
+                            `--------------------------------------------%0A` +
+                            `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Mobile Number:* ${encodeURIComponent(mobile)}%0A` +
+                            `*Selected Plan:* ${encodeURIComponent(plan)}%0A` +
+                            `*Delivery Address:* ${encodeURIComponent(address)}%0A` +
+                            `--------------------------------------------%0A` +
+                            `*Schedule:* Monday to Saturday Delivery%0A%0A` +
+                            `Please activate my subscription plan!`;
 
-            document.getElementById('invName').innerText = name;
-            document.getElementById('invMobile').innerText = mobile;
-            document.getElementById('invPlan').innerText = plan;
-            document.getElementById('invAddress').innerText = address;
-            document.getElementById('invBase').innerText = `₹${finalBase.toFixed(2)}`;
-            document.getElementById('invGst').innerText = `₹${finalGst.toFixed(2)}`;
-            document.getElementById('invTotal').innerText = `₹${finalTotal.toFixed(0)}`;
-
-            const upiId = "Sunita6dec1968@okaxis";
-            const businessName = "Tiffin Box Chetan";
-            // Deep Link targeting the full calculated amount with GST
-            currentUpiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(businessName)}&am=${finalTotal.toFixed(0)}&cu=INR&tn=${encodeURIComponent('Premium Tiffin Service Bill ' + plan)}`;
-
-            document.getElementById('sub-form-card').classList.add('hidden');
-            document.getElementById('sub-checkout-card').classList.remove('hidden');
-        }
-
-        function triggerPayment() {
-            window.location.href = currentUpiLink;
-
-            const plan = document.getElementById('selectedPlanInput').value;
-            const name = document.getElementById('userName').value;
-            const mobile = document.getElementById('userMobile').value;
-            const address = document.getElementById('userAddress').value;
-
-            // Structure professional GST exclusive text message layout for WhatsApp
-            const whatsappMessage = `🧾 *TIFFIN BOX - TAX INVOICE RECEIPT* 🍱%0A` +
-                                    `--------------------------------------------%0A` +
-                                    `*Customer:* ${encodeURIComponent(name)} (${encodeURIComponent(mobile)})%0A` +
-                                    `*Plan Selected:* ${encodeURIComponent(plan)}%0A` +
-                                    `*Delivery Route Address:* ${encodeURIComponent(address)}%0A` +
-                                    `--------------------------------------------%0A` +
-                                    `*Base Plan Price:* ₹${finalBase.toFixed(2)}%0A` +
-                                    `*GST Amount (18% Extra):* ₹${finalGst.toFixed(2)}%0A` +
-                                    `*Net Total Paid via UPI:* ₹${finalTotal.toFixed(0)}%0A` +
-                                    `--------------------------------------------%0A` +
-                                    `*Payment Status:* ✅ SUCCESSFUL / AUTHORIZED%0A%0A` +
-                                    `Thank you for choosing premium quality homemade meals!`;
+            // Chetan's number target
+            const whatsappUrl = `https://wa.me/919318464085?text=${message}`;
             
-            const whatsappUrl = `https://wa.me/919318464085?text=${whatsappMessage}`;
-            document.getElementById('whatsappBtn').href = whatsappUrl;
-
-            // Render safe auto-ticking system before switching view
-            buildAutomaticTracker();
-
-            setTimeout(() => {
-                document.getElementById('sub-checkout-card').classList.add('hidden');
-                document.getElementById('sub-success-card').classList.remove('hidden');
-            }, 1200);
-        }
-
-        // Auto generation logic for progress days tracker
-        function buildAutomaticTracker() {
-            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            // Gets user's local live day name (e.g., "Wednesday")
-            const currentDayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-            const currentDayIndex = days.indexOf(currentDayName); 
-
-            let trackerHtml = "";
-            days.forEach((day, index) => {
-                // Agar loop wala day aaj ka ya bita hua day hai, toh checkmark system automatically lagaye
-                const isCompleted = (index <= currentDayIndex && currentDayIndex !== -1);
-                const isChecked = isCompleted ? 'checked' : '';
-                
-                trackerHtml += `
-                    <label class="flex items-center justify-between p-3.5 ${isCompleted ? 'bg-emerald-50/60 border-emerald-200' : 'bg-slate-50 border-slate-200'} border rounded-xl select-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-lg ${isCompleted ? 'bg-green-600' : 'bg-slate-400'} text-white font-bold flex items-center justify-center text-xs">${day[0]}</span>
-                            <span class="font-bold text-xs ${isCompleted ? 'text-slate-900' : 'text-slate-500'}">${day} Delivery Meal ${isCompleted ? '(Completed)' : '(Pending)'}</span>
-                        </div>
-                        <input type="checkbox" ${isChecked} disabled class="w-5 h-5 rounded border-slate-300 text-green-600 accent-green-600 cursor-not-allowed">
-                    </label>
-                `;
-            });
-            document.getElementById('dynamicTrackerDays').innerHTML = trackerHtml;
-        }
-
-        function resetDemo() {
-            document.getElementById('activationForm').reset();
-            document.getElementById('sub-form-card').classList.remove('hidden');
-            document.getElementById('sub-checkout-card').classList.add('hidden');
-            document.getElementById('sub-success-card').classList.add('hidden');
+            // Redirect smoothly to WhatsApp Chat
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
 </html>
-
-    
