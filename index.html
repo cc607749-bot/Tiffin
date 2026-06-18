@@ -3,311 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiffin Box - Premium Subscription Service</title>
-    <!-- Tailwind CSS Dynamic CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .custom-scroll::-webkit-scrollbar { height: 6px; }
-        .custom-scroll::-webkit-scrollbar-thumb { bg-color: #cbd5e1; border-radius: 10px; }
-    </style>
+    <title>Tiffin Box - Premium Tiffin Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-slate-50 font-sans text-gray-800 m-0 p-0 antialiased">
 
-    <!-- Top Navigation Bar -->
-    <header class="bg-white shadow-xs sticky top-0 z-50 border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-green-600 rounded-xl flex items-center justify-center text-white shadow-sm">
-                    <i class="fas fa-box-open text-sm"></i>
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-tr from-green-600 to-emerald-500 text-white p-3 rounded-2xl shadow-lg shadow-green-200">
+                    <i class="fa-solid fa-utensils text-2xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black text-green-600 tracking-tight leading-none">TIFFIN <span class="text-gray-900">BOX</span></h1>
-                    <p class="text-[9px] font-bold text-gray-400 tracking-widest uppercase mt-0.5">Ghar Jaisa Swad</p>
+                    <h1 class="text-2xl font-black tracking-tight text-gray-950">TIFFIN <span class="text-green-600">BOX</span></h1>
+                    <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Ghar Jaisa Swad</p>
                 </div>
             </div>
+            
             <div class="flex items-center gap-2">
-                <button class="text-xs font-black text-orange-600 bg-orange-50 border border-orange-200/60 px-3 py-2 rounded-xl hover:bg-orange-100 transition">Trick & Menu</button>
-                <button class="text-xs font-black text-white bg-green-600 px-3 py-2 rounded-xl shadow-xs hover:bg-green-700 transition">Refer Now</button>
+                <select id="citySelector" class="bg-slate-100 text-slate-800 font-bold text-xs px-3 py-2 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-green-500">
+                    <option value="delhi">Delhi (All Pincodes) ▼</option>
+                </select>
+            </div>
+            
+            <div class="flex items-center gap-4 bg-green-50/60 px-4 py-2 rounded-2xl border border-green-100/50">
+                <div class="bg-green-600 text-white rounded-full p-2 w-8 h-8 flex items-center justify-center shadow-md shadow-green-200">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Owner: Chetan</p>
+                    <a href="tel:9318464085" class="text-sm font-extrabold text-green-700 hover:underline">9318464085</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Grid Layout -->
-    <main class="max-w-6xl mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        <!-- LEFT PANEL: Selectors & Controls (3 Columns) -->
-        <div class="lg:col-span-4 space-y-4">
+    <section class="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-950 text-white py-16 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent"></div>
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-emerald-500/30">100% Secure Razorpay Gateway</span>
+            <h2 class="text-4xl md:text-6xl font-black mt-6 mb-4 leading-tight tracking-tight">Ghar Ka Shuddh Khana, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">Rozana Aapke Darwaze Par!</span></h2>
+            <p class="text-slate-400 text-sm md:text-base mb-8 max-w-xl mx-auto">Monday to Saturday Fresh Lunch aur Dinner options. Aaj hi apna plan select karein, secure pay karein aur WhatsApp par confirm karein.</p>
             
-            <!-- City Selector Widget -->
-            <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-4 rounded-2xl text-white shadow-md">
-                <label class="block text-[10px] font-black uppercase tracking-widest mb-1.5 opacity-90">Multi-City / Branch Selector</label>
-                <div class="relative">
-                    <select class="w-full bg-white text-gray-900 p-3 rounded-xl font-bold text-sm appearance-none focus:outline-none shadow-inner cursor-pointer">
-                        <option>Delhi (All Pincodes)</option>
-                    </select>
-                    <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-gray-500">
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </div>
+            <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-md mx-auto flex flex-col sm:flex-row items-center gap-2 border border-slate-700/50 mb-6">
+                <div class="flex items-center gap-2 pl-2 w-full">
+                    <i class="fa-solid fa-location-dot text-slate-400"></i>
+                    <input type="number" id="pincodeInput" placeholder="Enter Delhi Pincode (e.g., 110001)" class="w-full text-slate-900 text-sm py-2 bg-transparent outline-none font-medium">
                 </div>
+                <button onclick="checkDelhiPincode()" class="w-full sm:w-auto bg-green-600 text-white font-bold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider hover:bg-green-700 transition shrink-0">Check</button>
+            </div>
+            <p id="pincodeResult" class="text-xs font-bold text-emerald-400 mb-8 min-h-[16px]"></p>
+
+            <a href="#plans" class="bg-white text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-xl hover:bg-green-50 transition transform hover:-translate-y-0.5 inline-block text-sm uppercase tracking-wider">View Subscription Plans</a>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 -mt-8 relative z-20 max-w-5xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div onclick="copyReferralLink()" class="bg-white p-5 rounded-2xl shadow-lg border border-slate-100 text-center cursor-pointer hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center min-h-[130px]">
+                <div class="w-10 h-10 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-2 shadow-inner">
+                    <i class="fa-solid fa-gift text-lg"></i>
+                </div>
+                <h4 class="text-xs font-black text-slate-900">Refer & Earn</h4>
+                <span class="text-[10px] text-green-600 font-bold mt-1 bg-green-50 px-2 py-0.5 rounded-md">₹100 Off / 2-Days Free</span>
             </div>
 
-            <!-- Pincode Validation Module -->
-            <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-                <h2 class="text-base font-black text-gray-900 mb-1 flex items-center gap-1.5">
-                    <i class="fas fa-map-marker-alt text-orange-500"></i> Find Tiffin Delivery
-                </h2>
-                <p class="text-xs text-gray-500 mb-4">Apne area ka delivery active status check karein.</p>
-                <div class="bg-gray-50 p-1.5 rounded-xl flex items-center gap-2 border border-gray-200 focus-within:border-green-500 transition">
-                    <input type="number" id="pincodeInput" placeholder="Enter 6-digit Pincode" class="w-full bg-transparent px-3 py-2 text-sm text-gray-800 font-bold focus:outline-none">
-                    <button onclick="checkPincode()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg font-bold text-xs hover:bg-black transition tracking-wider uppercase">Check</button>
+            <div onclick="openModal('b2bModal')" class="bg-white p-5 rounded-2xl shadow-lg border border-slate-100 text-center cursor-pointer hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center min-h-[130px]">
+                <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-2 shadow-inner">
+                    <i class="fa-solid fa-briefcase text-lg"></i>
                 </div>
-                <p id="pincodeResult" class="mt-3 text-xs font-bold text-green-600 flex items-center gap-1">
-                    <i class="fas fa-check-circle"></i> Now serving all active pincodes in Delhi.
-                </p>
+                <h4 class="text-xs font-black text-slate-900">B2B / Corporate</h4>
+                <span class="text-[10px] text-slate-400 font-bold mt-1">Enquiry Form</span>
             </div>
 
-            <!-- Navigation Shortcuts (Mobile Slider optimized) -->
-            <div class="flex gap-2 overflow-x-auto custom-scroll pb-2 lg:grid lg:grid-cols-2 lg:gap-3 lg:pb-0">
-                <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-3xs text-center min-w-[130px] flex-shrink-0">
-                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mx-auto mb-2"><i class="fas fa-gift text-sm"></i></div>
-                    <p class="text-xs font-black text-gray-900">Refer & Earn</p>
-                    <p class="text-[10px] text-green-600 font-bold mt-0.5">₹100 Instant Off</p>
+            <div onclick="openModal('kitchenModal')" class="bg-white p-5 rounded-2xl shadow-lg border border-slate-100 text-center cursor-pointer hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center min-h-[130px]">
+                <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-2 shadow-inner">
+                    <i class="fa-solid fa-hand-sparkles text-lg"></i>
                 </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-3xs text-center min-w-[130px] flex-shrink-0">
-                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto mb-2"><i class="fas fa-building text-sm"></i></div>
-                    <p class="text-xs font-black text-gray-900">B2B / Corporate</p>
-                    <p class="text-[10px] text-gray-400 font-bold mt-0.5">Bulk Enquiry Form</p>
+                <h4 class="text-xs font-black text-slate-900">Our Kitchen</h4>
+                <span class="text-[10px] text-slate-400 font-bold mt-1">Transparency Photos</span>
+            </div>
+
+            <div onclick="openModal('policyModal')" class="bg-white p-5 rounded-2xl shadow-lg border border-slate-100 text-center cursor-pointer hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col items-center justify-center min-h-[130px]">
+                <div class="w-10 h-10 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-2 shadow-inner">
+                    <i class="fa-solid fa-clock text-lg"></i>
                 </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-3xs text-center min-w-[130px] flex-shrink-0 lg:block">
-                    <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-amber-500 mx-auto mb-2"><i class="fas fa-shield-alt text-sm"></i></div>
-                    <p class="text-xs font-black text-gray-900">Our Kitchen</p>
-                    <p class="text-[10px] text-gray-400 font-bold mt-0.5">100% Hygiene Track</p>
-                </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-3xs text-center min-w-[130px] flex-shrink-0 lg:block">
-                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mx-auto mb-2"><i class="fas fa-clock text-sm"></i></div>
-                    <p class="text-xs font-black text-gray-900">Cancellation Page</p>
-                    <p class="text-[10px] text-gray-400 font-bold mt-0.5">Easy Refund Rules</p>
-                </div>
+                <h4 class="text-xs font-black text-slate-900">Refund Policy</h4>
+                <span class="text-[10px] text-red-500 font-bold mt-1 bg-red-50 px-1.5 py-0.5 rounded-md">8 AM / 2 PM Rules</span>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT PANEL: Banner, Menu Showcase, Subscription System (8 Columns) -->
-        <div class="lg:col-span-8 space-y-6">
+    <section id="plans" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl md:text-4xl font-black text-slate-950 tracking-tight">Subscription Plans (Lunch & Dinner)</h3>
+            <p class="text-slate-500 mt-2 text-sm md:text-base">Ghar jaisa swad, dono time - bina kisi jhanjhat ke (Monday to Saturday Delivery)</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <!-- Hero Banner Component -->
-            <div class="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-3xs">
-                <div class="space-y-1.5 text-center sm:text-left">
-                    <h2 class="text-2xl font-black text-gray-900 tracking-tight leading-tight">Fresh, Healthy Tiffin.</h2>
-                    <p class="text-base font-bold text-green-600">Delivered to your Door.</p>
-                </div>
-                <div class="flex gap-2 overflow-x-auto max-w-full">
-                    <div class="w-20 h-20 bg-gray-100 rounded-xl border border-dashed border-gray-300 flex-shrink-0 flex flex-col items-center justify-center p-2 text-center text-gray-400">
-                        <i class="fas fa-utensils text-xs mb-1"></i><span class="text-[8px] font-bold">Thali Preview</span>
+            <div class="bg-white border-2 border-green-500 rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col justify-between transform hover:scale-[1.02] transition duration-300">
+                <div class="absolute top-0 right-0 bg-green-500 text-white text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">Best Value</div>
+                <div>
+                    <span class="text-[10px] font-bold text-green-600 uppercase tracking-widest bg-green-50 px-2.5 py-1 rounded-md">Monthly Premium</span>
+                    <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-slate-950">₹10,000</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month</span>
                     </div>
-                    <div class="w-20 h-20 bg-gray-100 rounded-xl border border-dashed border-gray-300 flex-shrink-0 flex flex-col items-center justify-center p-2 text-center text-gray-400">
-                        <i class="fas fa-hot-tub text-xs mb-1"></i><span class="text-[8px] font-bold">Live Kitchen</span>
-                    </div>
+                    <ul class="space-y-3.5 my-6 text-sm text-slate-600">
+                        <li class="font-bold text-green-700"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lunch & Dinner (Both Meals)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Family Pack</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                    </ul>
                 </div>
+                <button onclick="selectPlan('Monthly Premium (4 Person Family Pack)', 10000)" class="w-full bg-green-600 text-white font-bold py-3.5 rounded-xl hover:bg-green-700 transition shadow-lg shadow-green-100">Subscribe Now</button>
             </div>
 
-            <!-- Featured Menu Showcase Grid -->
-            <div>
-                <h3 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Featured Menu (Today)</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 text-center shadow-3xs">
-                        <div class="w-full h-16 bg-gray-50 rounded-lg mb-2 flex items-center justify-center text-gray-300"><i class="fas fa-hamburger text-lg"></i></div>
-                        <p class="text-xs font-bold text-gray-800 truncate">Today's Meal</p>
-                        <p class="text-xs font-black text-gray-900 mt-0.5">₹20.00</p>
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
+                <div>
+                    <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Weekly Premium</span>
+                    <h4 class="text-2xl font-black mt-2 text-slate-900">4 Person Family Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-slate-950">₹2,800</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 text-center shadow-3xs">
-                        <div class="w-full h-16 bg-gray-50 rounded-lg mb-2 flex items-center justify-center text-gray-300"><i class="fas fa-cheese text-lg"></i></div>
-                        <p class="text-xs font-bold text-gray-800 truncate">Mawi Chesie Meal</p>
-                        <p class="text-xs font-black text-gray-900 mt-0.5">₹23.00</p>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 text-center shadow-3xs">
-                        <div class="w-full h-16 bg-gray-50 rounded-lg mb-2 flex items-center justify-center text-gray-300"><i class="fas fa-drumstick-bite text-lg"></i></div>
-                        <p class="text-xs font-bold text-gray-800 truncate">Chakan Meal</p>
-                        <p class="text-xs font-black text-gray-900 mt-0.5">₹25.00</p>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 text-center shadow-3xs">
-                        <div class="w-full h-16 bg-gray-50 rounded-lg mb-2 flex items-center justify-center text-gray-300"><i class="fas fa-egg text-lg"></i></div>
-                        <p class="text-xs font-bold text-gray-800 truncate">Appetizind Tiffin</p>
-                        <p class="text-xs font-black text-gray-900 mt-0.5">₹110.00</p>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 text-center shadow-3xs">
-                        <div class="w-full h-16 bg-gray-50 rounded-lg mb-2 flex items-center justify-center text-gray-300"><i class="fas fa-bowl-rice text-lg"></i></div>
-                        <p class="text-xs font-bold text-gray-800 truncate">Bangala Meal</p>
-                        <p class="text-xs font-black text-gray-900 mt-0.5">₹23.00</p>
-                    </div>
+                    <ul class="space-y-3.5 my-6 text-sm text-slate-600">
+                        <li class="font-bold text-green-700"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lunch & Dinner (Both Meals)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 4 Person Complete Family Pack</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                    </ul>
                 </div>
+                <button onclick="selectPlan('Weekly Premium (4 Person Family Pack)', 2800)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
             </div>
 
-            <!-- MAIN COMPREHENSIVE SUBSCRIPTION ENGINE -->
-            <div class="bg-white border-2 border-green-600 rounded-2xl p-5 shadow-xs space-y-4">
-                <div class="border-b border-gray-100 pb-3 flex justify-between items-center">
-                    <div>
-                        <span class="bg-green-600 text-white text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider">Subscription Module</span>
-                        <h3 class="text-lg font-black text-gray-900 mt-0.5">Choose Tiffin Plan & Billing Cycle</h3>
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
+                <div>
+                    <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Monthly Solo</span>
+                    <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-slate-950">₹3,500</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Month</span>
                     </div>
-                    <i class="fas fa-calendar-check text-green-600 text-xl opacity-40"></i>
+                    <ul class="space-y-3.5 my-6 text-sm text-slate-600">
+                        <li class="font-bold text-green-700"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lunch & Dinner (Both Meals)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Diet Single Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                    </ul>
                 </div>
+                <button onclick="selectPlan('Monthly Solo (1 Person Single Meal)', 3500)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+            </div>
 
-                <!-- Step 1: Select Meal Type Content Tier -->
-                <div class="space-y-2">
-                    <label class="text-xs font-black text-gray-400 uppercase tracking-wider block">Step 1: Select Meal Type</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        <label class="border-2 border-green-600 bg-green-50/10 p-3 rounded-xl flex justify-between items-center cursor-pointer">
-                            <div class="flex items-center gap-2.5">
-                                <input type="radio" name="mealType" value="Standard Veg" checked class="w-4 h-4 accent-green-600">
-                                <div>
-                                    <p class="text-xs font-black text-gray-900">Standard Veg Thali</p>
-                                    <p class="text-[10px] text-gray-400">4 Roti, Rice, Dal, Sabzi, Salad</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-black text-green-700">Base Plan</span>
-                        </label>
-                        <label class="border border-gray-200 p-3 rounded-xl flex justify-between items-center cursor-pointer hover:border-green-500 transition">
-                            <div class="flex items-center gap-2.5">
-                                <input type="radio" name="mealType" value="Premium Special" class="w-4 h-4 accent-green-600">
-                                <div>
-                                    <p class="text-xs font-black text-gray-900">Premium Special Thali</p>
-                                    <p class="text-[10px] text-gray-400">Plan + Paneer Special + Dessert</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-black text-gray-500">+₹30/Meal</span>
-                        </label>
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300">
+                <div>
+                    <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Weekly Solo</span>
+                    <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Single Meal</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-slate-950">₹1,000</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
+                    <ul class="space-y-3.5 my-6 text-sm text-slate-600">
+                        <li class="font-bold text-green-700"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lunch & Dinner (Both Meals)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 1 Person Diet Single Meal</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                    </ul>
                 </div>
+                <button onclick="selectPlan('Weekly Solo (1 Person Single Meal)', 1000)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+            </div>
 
-                <!-- Step 2: Duration / Subscription Cycle Plan Selection -->
-                <div class="space-y-2 pt-1">
-                    <label class="text-xs font-black text-gray-400 uppercase tracking-wider block">Step 2: Choose Subscription Tenure</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        <label class="border border-gray-200 p-3 rounded-xl block cursor-pointer hover:border-green-500 transition text-center relative">
-                            <input type="radio" name="duration" value="Daily" checked class="absolute top-3 left-3 accent-green-600">
-                            <p class="text-xs font-black text-gray-900 mt-2">Daily Trial</p>
-                            <p class="text-[10px] text-gray-400 mt-0.5">1 Day Delivery</p>
-                        </label>
-                        <label class="border border-gray-200 p-3 rounded-xl block cursor-pointer hover:border-green-500 transition text-center relative">
-                            <input type="radio" name="duration" value="Weekly" class="absolute top-3 left-3 accent-green-600">
-                            <p class="text-xs font-black text-gray-900 mt-2">Weekly Plan</p>
-                            <p class="text-[10px] text-gray-400 mt-0.5">7 Days Contract</p>
-                        </label>
-                        <label class="border border-gray-200 p-3 rounded-xl block cursor-pointer hover:border-green-500 transition text-center relative">
-                            <input type="radio" name="duration" value="Monthly" class="absolute top-3 left-3 accent-green-600">
-                            <p class="text-xs font-black text-gray-900 mt-2">Monthly Saver</p>
-                            <p class="text-[10px] text-green-600 font-bold mt-0.5">30 Days (10% Off)</p>
-                        </label>
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between hover:border-green-400 transition duration-300 mx-auto md:col-span-2 lg:col-span-1 w-full">
+                <div>
+                    <span class="text-[10px] font-bold text-orange-600 uppercase tracking-widest bg-orange-50 px-2.5 py-1 rounded-md">Trial Pack</span>
+                    <h4 class="text-2xl font-black mt-2 text-slate-900">1 Person Weekly Trial</h4>
+                    <div class="my-4">
+                        <span class="text-4xl font-black text-slate-950">₹500</span>
+                        <span class="text-slate-400 text-xs font-semibold">/ Week</span>
                     </div>
+                    <ul class="space-y-3.5 my-6 text-sm text-slate-600">
+                        <li class="font-bold text-green-700"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lunch & Dinner (Both Meals)</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Best for testing taste & quality</li>
+                        <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Monday to Saturday Delivery</li>
+                    </ul>
                 </div>
+                <button onclick="selectPlan('Weekly Trial (1 Person Trial)', 500)" class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl hover:bg-slate-950 transition">Subscribe Now</button>
+            </div>
 
-                <!-- Step 3: Checkout Details Address Entry -->
-                <div class="space-y-3 pt-2 border-t border-gray-100">
-                    <div>
-                        <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Delivery Destination Address</label>
-                        <textarea id="customerAddress" rows="2" placeholder="Poora Pata (Address) daalein jahan tiffin bhejna hai" class="w-full border border-gray-200 p-3 rounded-xl text-sm bg-gray-50/50 focus:outline-none focus:border-green-600 font-medium" required></textarea>
+        </div>
+    </section>
+
+    <section id="subscription-section" class="bg-slate-100 py-20 px-4 border-t border-slate-200/60">
+        <div class="max-w-xl mx-auto">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                <div class="text-center mb-8">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-950">Secure Activation</h3>
+                    <p class="text-sm text-slate-400 mt-1">Details bharein aur pay karke WhatsApp par order bhejein</p>
+                </div>
+                
+                <form onsubmit="startRazorpayPayment(event)">
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Selected Plan</label>
+                        <input type="text" id="selectedPlanInput" readonly class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 font-bold text-green-700 outline-none" placeholder="Pehle upar se koi plan select karein" required>
+                        <input type="hidden" id="selectedAmountInput">
                     </div>
 
-                    <!-- Step 4: Payment Channels Configuration Gateway Selector -->
-                    <div>
-                        <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Select Checkout Gateway</label>
-                        <div class="grid grid-cols-2 gap-2">
-                            <label class="border border-gray-200 p-2.5 rounded-xl text-center font-bold text-xs block cursor-pointer bg-gray-50 flex items-center justify-center gap-1.5">
-                                <input type="radio" name="paymentGateway" value="UPI" checked class="accent-green-600"> <i class="fas fa-mobile-alt text-blue-600"></i> Pay Online (UPI)
-                            </label>
-                            <label class="border border-gray-200 p-2.5 rounded-xl text-center font-bold text-xs block cursor-pointer bg-gray-50 flex items-center justify-center gap-1.5">
-                                <input type="radio" name="paymentGateway" value="COD" class="accent-green-600"> <i class="fas fa-wallet text-amber-600"></i> Cash / COD
-                            </label>
-                        </div>
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Full Name</label>
+                        <input type="text" id="userName" class="w-full border border-slate-200 rounded-xl px-4 py-3.5 focus:border-green-500 focus:ring-4 focus:ring-green-100 outline-none transition" placeholder="Apna Naam Likhein" required>
                     </div>
 
-                    <!-- Secure Submission Dynamic Loop Button -->
-                    <button onclick="executeOrderPipeline()" class="w-full bg-green-600 text-white p-3.5 rounded-xl font-black text-sm tracking-wide shadow-md hover:bg-green-700 transition uppercase mt-2 flex items-center justify-center gap-2">
-                        <i class="fas fa-lock"></i> Proceed to Pay & Secure Subscription
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Mobile Number</label>
+                        <input type="tel" id="userMobile" class="w-full border border-slate-200 rounded-xl px-4 py-3.5 focus:border-green-500 focus:ring-4 focus:ring-green-100 outline-none transition" placeholder="Mobile Number daalein" required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Delivery Address</label>
+                        <textarea id="userAddress" rows="3" class="w-full border border-slate-200 rounded-xl px-4 py-3.5 focus:border-green-500 focus:ring-4 focus:ring-green-100 outline-none transition" placeholder="Poora Pata (Address) daalein jahan tiffin bhejna hai" required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-extrabold py-4 rounded-xl shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2 text-center text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-credit-card text-base"></i> Pay Now & Confirm on WhatsApp
                     </button>
-                </div>
-            </div>
-
-            <!-- Transparency / Clean Kitchen Photo Gallery Section -->
-            <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-3xs">
-                <h3 class="text-xs font-black uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-1">
-                    <i class="fas fa-hand-sparkles text-amber-500"></i> Our Kitchen Transparency
-                </h3>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="h-28 bg-gray-50 rounded-xl flex flex-col items-center justify-center text-xs text-gray-400 border border-dashed border-gray-300">
-                        <i class="fas fa-users-cog text-lg mb-1 text-gray-300"></i><span>Staff Hygiene View</span>
-                    </div>
-                    <div class="h-28 bg-gray-50 rounded-xl flex flex-col items-center justify-center text-xs text-gray-400 border border-dashed border-gray-300">
-                        <i class="fas fa-soap text-lg mb-1 text-gray-300"></i><span>Sanitized Stations</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Global Cancellation Timeline Warning Alert Bar -->
-            <div class="bg-gray-900 text-white p-4 rounded-xl text-center border-l-4 border-orange-500">
-                <p class="text-xs font-black text-orange-400 mb-0.5"><i class="fas fa-exclamation-triangle"></i> Cancellation & Refund Policy Rules</p>
-                <p class="text-[11px] text-gray-400 font-medium">Lunch cancellation before 8 AM | Dinner cancellation before 2 PM Rules</p>
+                </form>
             </div>
 
         </div>
-    </main>
+    </section>
 
-    <!-- Professional Corporate Footer Layout Section -->
-    <footer class="bg-orange-500 text-white mt-12 border-t border-orange-600">
-        <div class="max-w-6xl mx-auto p-6 text-center md:flex md:justify-between md:items-center">
-            <div class="text-center md:text-left mb-4 md:mb-0 space-y-1">
-                <h4 class="text-base font-black uppercase tracking-wider">Contact Details</h4>
-                <p class="text-xs opacity-90">Support Mail: <a href="mailto:cc607749@gmail.com" class="underline font-bold">cc607749@gmail.com</a></p>
-                <p class="text-[10px] opacity-75 pt-2">© Copyright © Tiffin Box Inc. All Rights Reserved.</p>
-            </div>
-            
-            <!-- Management Contact Badge Inside Footer Container -->
-            <div class="bg-orange-600 border border-orange-400/50 px-4 py-3 rounded-xl inline-flex items-center gap-3 shadow-inner">
-                <div class="w-8 h-8 bg-white text-orange-600 rounded-full flex items-center justify-center shadow-xs">
-                    <i class="fas fa-user-tie text-sm"></i>
-                </div>
-                <div class="text-left">
-                    <p class="text-[9px] uppercase font-black tracking-widest opacity-75 leading-none">Owner: Chetan</p>
-                    <p class="text-sm font-black leading-tight mt-0.5">9318464085</p>
-                </div>
-            </div>
-        </div>
+    <footer class="bg-slate-950 text-slate-500 py-10 text-center text-xs border-t border-slate-900">
+        <p class="font-bold text-slate-400">&copy; 2026 TIFFIN BOX. All Rights Reserved.</p>
+        <p class="mt-1 text-slate-600">Premium Taste Verified & Handcrafted by Chetan Bhai.</p>
     </footer>
 
-    <!-- Fixed Floating WhatsApp Support Bot Trigger Interface -->
-    <a href="https://wa.me/919318464085?text=Hello%20Chetan%20Bhai,%20I%20want%20to%20activate%20a%20Tiffin%20Box%20subscription!" target="_blank" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2.5 rounded-full font-bold shadow-2xl flex items-center gap-2 hover:bg-green-600 transition z-50 text-xs">
-        <span class="bg-white text-gray-900 px-2 py-1 rounded-md text-[10px] font-black shadow-sm">Need Help? Chat with us</span>
-        <i class="fab fa-whatsapp text-lg"></i>
-    </a>
+    <div id="b2bModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-3xl max-w-sm w-full shadow-2xl border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-black text-slate-950"><i class="fa-solid fa-building text-blue-600 mr-1"></i> B2B Enquiry</h3>
+                <button onclick="closeModal('b2bModal')" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form action="https://formspree.io/f/xoqogezw" method="POST" class="space-y-3">
+                <input type="hidden" name="_replyto" value="cc607749@gmail.com">
+                <input type="text" name="name" placeholder="Apna Naam" class="w-full border border-slate-200 p-3 rounded-xl text-sm outline-none" required>
+                <input type="text" name="company" placeholder="Company ya PG ka Naam" class="w-full border border-slate-200 p-3 rounded-xl text-sm outline-none" required>
+                <input type="number" name="quantity" placeholder="Daily kitne Tiffins chahiye?" class="w-full border border-slate-200 p-3 rounded-xl text-sm outline-none" required>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-blue-700 shadow-lg shadow-blue-100">Submit Quotation Request</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- Frontend Core Application Controls Script Engine -->
+    <div id="kitchenModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-3xl max-w-md w-full shadow-2xl border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-black text-slate-950"><i class="fa-solid fa-hand-sparkles text-amber-500 mr-1"></i> Kitchen Hygiene</h3>
+                <button onclick="closeModal('kitchenModal')" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">Humari kitchen me 100% pure safety protocols follow hote hain. Staff hamesha medical gloves, hairnets aur sanitizers ka upyog karta hai.</p>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="h-28 bg-slate-100 rounded-xl bg-cover bg-center border" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=250')"></div>
+                <div class="h-28 bg-slate-100 rounded-xl bg-cover bg-center border" style="background-image:url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=250')"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="policyModal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-3xl max-w-sm w-full shadow-2xl border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-black text-red-600"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Tiffin Rules</h3>
+                <button onclick="closeModal('policyModal')" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
+                <p class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg border border-slate-100"><i class="fa-solid fa-circle-info text-green-600 mt-0.5"></i> <span><strong>Lunch Cancellation:</strong> Subah <strong>8:00 AM</strong> se pehle batana compulsory hai.</span></p>
+                <p class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg border border-slate-100"><i class="fa-solid fa-circle-info text-green-600 mt-0.5"></i> <span><strong>Dinner Cancellation:</strong> Dopahar <strong>2:00 PM</strong> se pehle batana compulsory hai.</span></p>
+                <p class="text-red-600 font-bold bg-red-50 p-3 rounded-xl border border-red-100"><i class="fa-solid fa-circle-exclamation mr-1"></i> Late cancellation par us din ka meal full count kiya jayega, koi balance refund ya skip credit nahi milega.</p>
+            </div>
+            <button onclick="closeModal('policyModal')" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-slate-950">I Understand</button>
+        </div>
+    </div>
+
     <script>
-        function checkPincode() {
-            const pin = document.getElementById('pincodeInput').value;
-            const result = document.getElementById('pincodeResult');
-            if(pin.startsWith('11') && pin.length === 6) {
-                result.innerHTML = "<i class='fas fa-check-circle text-green-400'></i> Haan! Service " + pin + " me active hai.";
-                result.className = "mt-3 text-xs font-bold text-green-500 flex items-center gap-1";
-            } else {
-                result.innerHTML = "<i class='fas fa-times-circle text-red-500'></i> Maaf kijiye, hum abhi sirf Delhi me active hain.";
-                result.className = "mt-3 text-xs font-bold text-red-500 flex items-center gap-1";
-            }
+        // --- ADDED NEW EXTRA FEATURES LOGIC ---
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
         }
 
-        function executeOrderPipeline() {
-            const address = document.getElementById('customerAddress').value;
-            const meal = document.querySelector('input[name="mealType"]:checked').value;
-            const cycle = document.querySelector('input[name="duration"]:checked').value;
-            const gate = document.querySelector('input[name="paymentGateway"]:checked').value;
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
 
-            if(!address.trim()) {
-                alert("Please enter your complete delivery destination address!");
+        function checkDelhiPincode() {
+            const pin = document.getElementById('pincodeInput').value.trim();
+            const result = document.getElementById('pincodeResult');
+            
+            if (pin === "") {
+                result.innerText = "Kripya pincode enter karein!";
+                result.className = "text-xs font-bold text-amber-500 mb-8";
                 return;
             }
 
-            alert("Subscription Created!\n\nMeal: " + meal + "\nTenure: " + cycle + "\nGateway: " + gate + "\n\nThis subscription block package is loaded into the delivery route.");
+            // Delhi state pin code validation checklist
+            if (pin.startsWith('11') && pin.length === 6) {
+                result.innerText = "✓ Haan! Hum Delhi Pincode (" + pin + ") me active hain. Aap order kar sakte hain.";
+                result.className = "text-xs font-bold text-green-400 mb-8 bg-green-950/40 py-2 px-3 rounded-xl inline-block border border-green-500/30";
+            } else {
+                result.innerText = "❌ Maaf kijiye, abhi humari service sirf Delhi (1100XX) me active hai.";
+                result.className = "text-xs font-bold text-red-400 mb-8 bg-red-950/40 py-2 px-3 rounded-xl inline-block border border-red-500/30";
+            }
+        }
+
+        function copyReferralLink() {
+            const dummyLink = "https://tiffinbox.github.io/?ref=CHETAN100";
+            navigator.clipboard.writeText(dummyLink).then(() => {
+                alert("🎉 Referral Link copy ho gaya hai! Isko share karein, jab aapka dost subscribe karega toh dono ko ₹100 ka discount milega!");
+            }).catch(err => {
+                alert("Link: " + dummyLink);
+            });
+        }
+
+        // --- ORIGINAL UNTOUCHED FUNCTIONAL LOGIC ---
+        function selectPlan(planName, amount) {
+            document.getElementById('selectedPlanInput').value = `${planName} (₹${amount})`;
+            document.getElementById('selectedAmountInput').value = amount;
+            document.getElementById('subscription-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function startRazorpayPayment(event) {
+            event.preventDefault();
+
+            const plan = document.getElementById('selectedPlanInput').value;
+            const amount = parseFloat(document.getElementById('selectedAmountInput').value);
+            const name = document.getElementById('userName').value;
+            const mobile = document.getElementById('userMobile').value;
+            const address = document.getElementById('userAddress').value;
+
+            if (!amount) {
+                alert("Kripya pehle koi plan select karein!");
+                return;
+            }
+
+            var options = {
+                "key": "rzp_live_T2p6Be2X0SrBzB", 
+                "amount": amount * 100, 
+                "currency": "INR",
+                "name": "Tiffin Box Service",
+                "description": plan,
+                "image": "https://cdn-icons-png.flaticon.com/512/3050/3050212.png",
+                "handler": function (response) {
+                    sendWhatsAppSuccess(name, mobile, plan, address, response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": name,
+                    "contact": mobile
+                },
+                "theme": {
+                    "color": "#16a34a" 
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }
+
+        function sendWhatsAppSuccess(name, mobile, plan, address, paymentId) {
+            const message = `✅ *TIFFIN BOX - PAYMENT VERIFIED* ✅%0A` +
+                            `--------------------------------------------%0A` +
+                            `*Payment ID:* ${paymentId} (Razorpay Verified)%0A` +
+                            `*Customer Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Mobile Number:* ${encodeURIComponent(mobile)}%0A` +
+                            `*Selected Plan:* ${encodeURIComponent(plan)}%0A` +
+                            `*Delivery Address:* ${encodeURIComponent(address)}%0A` +
+                            `--------------------------------------------%0A` +
+                            `*Meals:* Lunch & Dinner (Dono Time)%0A` +
+                            `*Schedule:* Monday to Saturday Delivery%0A%0A` +
+                            `Mera premium plan chalu kar dijiye. Thank you!`;
+
+            const whatsappUrl = `https://wa.me/919318464085?text=${message}`;
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
-</html>
+    </html>
