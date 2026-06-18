@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Portal - Tiffin Box</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-4 font-sans">
+    <div class="max-w-md mx-auto">
+        
+        <!-- Header Section -->
+        <div class="flex items-center justify-between mb-4 bg-white p-4 rounded-xl shadow-xs border border-gray-200">
+            <div>
+                <h1 class="text-lg font-black text-gray-900"><i class="fas fa-truck text-green-600 mr-1"></i> Today's Deliveries</h1>
+                <p class="text-[11px] text-gray-400 font-bold uppercase">Tiffin Box Delivery Portal</p>
+            </div>
+            <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">Delhi Active</span>
+        </div>
+
+        <!-- Orders Container (Real orders will show here when connected to Firebase) -->
+        <div id="ordersList" class="space-y-3">
+            
+            <!-- Ye ek delivery order ka sample hai jo automatic badlega -->
+            <div class="bg-white p-4 rounded-xl shadow-xs border border-gray-200">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h3 class="font-bold text-sm text-gray-900">New Order (Waiting for Database)</h3>
+                        <p class="text-xs text-gray-500">Plan: Standard Veg Meal</p>
+                    </div>
+                    <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded uppercase">Pending</span>
+                </div>
+                <p class="text-xs text-gray-700 mb-3 bg-gray-50 p-2.5 rounded-lg border border-gray-150">
+                    <i class="fas fa-map-marker-alt text-orange-500 mr-1"></i> Connaught Place, New Delhi - 110001
+                </p>
+                
+                <!-- Action Buttons for Delivery Boy -->
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="tel:9318464085" class="bg-gray-50 text-gray-800 p-2.5 rounded-lg text-center font-bold text-xs border border-gray-200 hover:bg-gray-100 flex items-center justify-center gap-1">
+                        <i class="fas fa-phone-alt text-green-600"></i> Click to Call
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Connaught+Place,+New+Delhi" target="_blank" class="bg-green-600 text-white p-2.5 rounded-lg text-center font-bold text-xs hover:bg-green-700 flex items-center justify-center gap-1 shadow-xs">
+                        <i class="fas fa-directions"></i> Open Maps
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
