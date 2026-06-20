@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiffin Box - Aya Nagar Premium Tiffin Service</title>
+    <title>Rasika Foods - Aya Nagar Premium Tiffin Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -12,13 +12,12 @@
 
     <!-- Header Section -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <!-- Brand Logo & Name Integrated -->
             <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-tr from-green-600 to-emerald-500 text-white p-3 rounded-2xl shadow-lg shadow-green-200">
-                    <i class="fa-solid fa-utensils text-2xl"></i>
-                </div>
+                <img src="Gemini_Generated_Image_kxggkwkxggkwkxgg.png" alt="Rasika Foods Logo" class="h-14 w-auto object-contain rounded-xl shadow-sm border border-gray-100">
                 <div>
-                    <h1 class="text-2xl font-black tracking-tight text-gray-950">TIFFIN <span class="text-green-600">BOX</span></h1>
+                    <h1 class="text-2xl font-black tracking-tight text-gray-950">RASIKA <span class="text-green-600">FOODS</span></h1>
                     <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Ghar Jaisa Swad</p>
                 </div>
             </div>
@@ -282,7 +281,7 @@
 
     <!-- Footer Section -->
     <footer class="bg-slate-950 text-slate-500 py-10 text-center text-xs border-t border-slate-900">
-        <p class="font-bold text-slate-400">&copy; 2026 TIFFIN BOX. All Rights Reserved.</p>
+        <p class="font-bold text-slate-400">&copy; 2026 RASIKA FOODS. All Rights Reserved.</p>
         <p class="mt-1 text-slate-600">Premium Taste Verified & Handcrafted by Chetan Bhai.</p>
     </footer>
 
@@ -293,9 +292,8 @@
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             <div class="text-center mb-6">
-                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2 shadow-inner">
-                    <i class="fa-solid fa-shield-halved text-lg"></i>
-                </div>
+                <!-- Popup Inside Brand Logo Integration -->
+                <img src="Gemini_Generated_Image_kxggkwkxggkwkxgg.png" alt="Rasika Foods" class="w-14 h-14 object-contain mx-auto mb-2 rounded-full shadow-inner">
                 <h3 class="text-xl font-black text-slate-950">Secure Activation</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Details bharein aur pay karke WhatsApp par order bhejein</p>
             </div>
@@ -368,7 +366,6 @@
             document.body.style.overflow = '';
         }
 
-        // UPDATED: Strictly check for Aya Nagar Pincode (110047)
         function checkAyaNagarPincode() {
             const pin = document.getElementById('pincodeInput').value.trim();
             const result = document.getElementById('pincodeResult');
@@ -387,7 +384,7 @@
         }
 
         function copyReferralLink() {
-            const dummyLink = "https://tiffinbox.github.io/?ref=CHETAN100";
+            const dummyLink = "https://rasikafoods.github.io/?ref=CHETAN100";
             navigator.clipboard.writeText(dummyLink).then(() => {
                 alert("🎉 Referral Link copy ho gaya hai!");
             });
@@ -416,9 +413,9 @@
                 "key": "rzp_live_T2p6Be2X0SrBzB", 
                 "amount": amount * 100, 
                 "currency": "INR",
-                "name": "Tiffin Box Service",
+                "name": "Rasika Foods", 
                 "description": plan,
-                "image": "https://cdn-icons-png.flaticon.com/512/3050/3050212.png",
+                "image": "Gemini_Generated_Image_kxggkwkxggkwkxgg.png", // Integrated Brand Logo inside Razorpay
                 "handler": function (response) {
                     closeModal('activationModal');
                     
@@ -442,7 +439,7 @@
         }
 
         function sendWhatsAppSuccess(name, mobile, plan, address, paymentId) {
-            const message = `✅ *TIFFIN BOX - PAYMENT VERIFIED* ✅%0A` +
+            const message = `✅ *RASIKA FOODS - PAYMENT VERIFIED* ✅%0A` +
                             `--------------------------------------------%0A` +
                             `*Payment ID:* ${paymentId}%0A` +
                             `*Customer Name:* ${encodeURIComponent(name)}%0A` +
@@ -457,4 +454,4 @@
         }
     </script>
 </body>
-                                                                                </html>                                         
+ </html>                                   
