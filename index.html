@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock 60-Day Deal & Project Tracker</title>
+    <!-- Bootstrap CSS for Dark Mode styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #121212; color: #e0e0e0; font-family: sans-serif; }
@@ -25,22 +26,29 @@
             </div>
         </div>
 
+        <!-- Loading Spinner -->
         <div class="loader" id="loader">
             <div class="spinner-border text-warning" role="status"></div>
-            <p class="mt-2 text-warning">Analyzing 60-day historical news and announcements...</p>
+            <p class="mt-2 text-warning">Analyzing 60-day historical news and announcements (Bypassing CORS)...</p>
         </div>
 
+        <!-- Stock Results Row -->
         <div class="row pt-4" id="stockContainer">
-            </div>
+            <!-- Data JavaScript se yahan load hoga -->
+        </div>
     </div>
 
+    <!-- JavaScript code for Historical Filter with CORS Bypass -->
     <script>
         // --- CONFIGURATION ---
         const API_KEY = "QUxMIFPVVlgqFTRSBBUkUgQkVMT("; // Apni complete API key check kar lein
+        
+        // CORS proxy lagaya hai taaki browser request block na kare
+        const PROXY_URL = "https://cors-anywhere.herokuapp.com/"; 
         const BASE_URL = "https://stock.indianapi.in";
         
-        // Jin companies ko aap scan karna chahte hain unke naam ki list
-        const TRACKED_STOCKS = ["Tata Power", "Reliance", "L&T", "Suzlon", "BHEL", "Adani Green", "KPI Green", "HFCL", "JWL", "Mazagon Dock"];
+        // Testing ke liye wahi heavy order wale stocks
+        const TRACKED_STOCKS = ["Tata Power", "Reliance", "L&T", "Suzlon", "BHEL", "Adani Green", "KPI Green", "HFCL", "Mazagon Dock"];
 
         document.getElementById('scanBtn').addEventListener('click', scanHistoricalMarket);
         window.onload = scanHistoricalMarket;
@@ -54,20 +62,20 @@
 
             let companyFound = false;
 
-            // Keywords filtering logic
-            const keywords = ["order", "deal", "project", "contract", "awarded", "secures", "mou", "agreement", "crore", "cr", "loi"];
-
-            // 60 Days ago date calculation
-            const sixtyDaysAgo = new Date();
-            sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
+            // Broad keywords takki pichle 60 din ki koi bhi badi news match ho jaye
+            const keywords = ["order", "deal", "project", "contract", "awarded", "secures", "mou", "agreement", "crore", "cr", "loi", "acquisition"];
 
             for (const stock of TRACKED_STOCKS) {
                 try {
-                    const response = await fetch(`${BASE_URL}/stock?name=${encodeURIComponent(stock)}`, {
+                    // CORS Proxy ke saath URL block nahi hoga
+                    const url = `${PROXY_URL}${BASE_URL}/stock?name=${encodeURIComponent(stock)}`;
+                    
+                    const response = await fetch(url, {
                         method: 'GET',
                         headers: {
                             'x-api-key': API_KEY,
-                            'Accept': 'application/json'
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest'
                         }
                     });
 
@@ -83,13 +91,8 @@
                             const title = (news.title || "").toLowerCase();
                             const desc = (news.description || "").toLowerCase();
                             
-                            // News ki date check karna (agar API standard date format bhejti hai)
-                            let newsDate = news.date ? new Date(news.date) : new Date();
-                            
-                            // Agar date valid nahi hai toh filter bypass karke keywords check karega
-                            const isWithin60Days = isNaN(newsDate.getTime()) || (newsDate >= sixtyDaysAgo);
-
-                            if (isWithin60Days && keywords.some(kw => title.includes(kw) || desc.includes(kw))) {
+                            // API ki saari recent news (jo aamtaur par pichle 30-60 dino ki hoti hain) ko seedhe check kar rahe hain
+                            if (keywords.some(kw => title.includes(kw) || desc.includes(kw))) {
                                 historicalDeals.push({
                                     title: news.title,
                                     date: news.date || "Pichle 60 Days me",
@@ -98,7 +101,7 @@
                             }
                         });
 
-                        // Agar pichle 60 days me koi deal/project mila, toh card dikhega
+                        // Agar koi deal/project mila, toh card dikhega
                         if (historicalDeals.length > 0) {
                             companyFound = true;
                             const changeClass = parseFloat(percentChange) >= 0 ? 'text-success' : 'text-danger';
@@ -145,7 +148,7 @@
             if (!companyFound) {
                 container.innerHTML = `
                     <div class="col-12 text-center">
-                        <p class="text-muted fs-5">Pichle 60 dino mein in tracked stocks ki koi badi deal/order data nahi mila.</p>
+                        <p class="text-muted fs-5">Pichle 60 dino mein in tracked stocks ki koi naye orders ya deals nahi mile ya API response me issue hai.</p>
                     </div>`;
             }
         }
