@@ -1,17 +1,18 @@
- <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Stock Deal & Order Tracker</title>
+    <title>Mega Stock Deal & Order Tracker</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #121212; color: #e0e0e0; font-family: sans-serif; }
         .card { background-color: #1e1e1e; border: 1px solid #333; color: #fff; margin-bottom: 20px; border-radius: 12px; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); border-color: #00e676; }
         .loader { display: none; text-align: center; margin: 50px 0; }
-        .badge-deal { background-color: #00e676; color: #000; font-weight: bold; font-size: 0.8rem; }
-        .badge-company { background-color: #ff9100; color: #000; font-weight: bold; font-size: 1rem; }
+        .text-success { color: #00e676 !important; }
+        .text-danger { color: #ff1744 !important; }
+        .badge-deal { background-color: #00e676; color: #000; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -19,15 +20,15 @@
     <div class="container my-5">
         <div class="row text-center mb-4">
             <div class="col">
-                <h1 class="fw-bold text-success">🎯 Automatic Stock Deal & Project Scanner</h1>
-                <p class="text-muted">Yeh website Indian Stock API ke Announcements Board ko scan karke un sabhi companies ko select karti hai jinki koi Deal, Order ya Project chal raha hai.</p>
-                <button id="scanBtn" class="btn btn-success btn-lg mt-2 fw-bold px-5">🔍 Scan Live Announcements</button>
+                <h1 class="fw-bold text-warning">📈 Mega Stock Deal & Order Tracker</h1>
+                <p class="text-muted">Yeh website 35+ High-Order Stocks ko scan karke unhe select karti hai jinki haal hi me koi Deal ya Project news aayi ho.</p>
+                <button id="scanBtn" class="btn btn-warning btn-lg mt-2 fw-bold px-5">🚀 Run Deep Scan Now</button>
             </div>
         </div>
 
         <div class="loader" id="loader">
-            <div class="spinner-border text-success" role="status" style="width: 3rem; height: 3rem;"></div>
-            <p class="mt-3 text-success fs-5">Scanning full market announcements for mega deals...</p>
+            <div class="spinner-border text-warning" role="status" style="width: 3rem; height: 3rem;"></div>
+            <p class="mt-3 text-warning fs-5" id="loaderText">Starting deep market scan...</p>
         </div>
 
         <div class="row pt-4" id="stockContainer">
@@ -36,15 +37,25 @@
 
     <script>
         // --- CONFIGURATION ---
-        const API_KEY = "QUxMIFPVVlgqFTRSBBUkUgQkVMT("; // Aapki di hui API Key
+        const API_KEY = "QUxMIFPVVlgqFTRSBBUkUgQkVMT("; // Apni API key conform rakhein
         const PROXY_URL = "https://api.allorigins.win/raw?url="; 
         const BASE_URL = "https://stock.indianapi.in";
+        
+        // India ke sabse zyada order aur project paane wale top 35+ stocks ki list
+        const BIG_STOCK_LIST = [
+            "Tata Power", "Reliance", "L&T", "Suzlon", "BHEL", "Adani Green", "KPI Green", 
+            "HFCL", "Mazagon Dock", "RVNL", "IRCON", "NHPC", "SJVN", "NTPC", "Power Grid", 
+            "GMR Infra", "IRFC", "BEL", "HAL", "Cochin Shipyard", "NBCC", "Railtel", 
+            "Texmaco Rail", "Titagarh", "JWL", "Tata Steel", "JINDALSTEL", "Adani Power", 
+            "JSW Energy", "Inox Wind", "Sterling Wilson", "Ahluwalia", "KEC International", "Kalpataru"
+        ];
 
-        document.getElementById('scanBtn').addEventListener('click', scanAnnouncements);
-        window.onload = scanAnnouncements;
+        document.getElementById('scanBtn').addEventListener('click', scanBulkMarket);
+        window.onload = scanBulkMarket;
 
-        async function scanAnnouncements() {
+        async function scanBulkMarket() {
             const loader = document.getElementById('loader');
+            const loaderText = document.getElementById('loaderText');
             const container = document.getElementById('stockContainer');
             
             loader.style.display = 'block';
@@ -52,63 +63,91 @@
 
             let companyFound = false;
 
-            // Strict keywords jo deal aur orders ko select karein
-            const keywords = ["order", "deal", "project", "contract", "awarded", "secures", "mou", "crore", "cr", "acquisition", "allotment"];
+            // Broad keywords jo news me milte hi stock ko trigger kar denge
+            const keywords = ["order", "deal", "project", "contract", "awarded", "secures", "mou", "agreement", "crore", "cr", "loi", "acquisition", "win", "wins"];
 
-            try {
-                // Hum individual stock ke badle poore market ke recent announcements ka endpoint hit kar rahe hain
-                const targetUrl = encodeURIComponent(`${BASE_URL}/recent_announcements`);
-                const url = `${PROXY_URL}${targetUrl}`;
+            // Ek-ek karke saare stocks background me scan honge
+            for (let i = 0; i < BIG_STOCK_LIST.length; i++) {
+                const stock = BIG_STOCK_LIST[i];
                 
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'x-api-key': API_KEY,
-                        'Accept': 'application/json'
-                    }
-                });
+                // Real-time status update loader text me dikhega
+                loaderText.innerText = `Scanning (${i+1}/${BIG_STOCK_LIST.length}): ${stock}...`;
 
-                if (response.status === 200) {
-                    const announcementsList = await response.json();
+                try {
+                    const targetUrl = encodeURIComponent(`${BASE_URL}/stock?name=${stock}`);
+                    const url = `${PROXY_URL}${targetUrl}`;
+                    
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'x-api-key': API_KEY,
+                            'Accept': 'application/json'
+                        }
+                    });
 
-                    // Agar API array bhejti hai toh loop chalega
-                    if (Array.isArray(announcementsList) && announcementsList.length > 0) {
-                        
-                        announcementsList.forEach(announcement => {
-                            const title = (announcement.title || "").toLowerCase();
-                            const desc = (announcement.description || "").toLowerCase();
-                            const companyName = announcement.companyName || announcement.symbol || "Unknown Company";
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        const currentPrice = data.currentPrice || "N/A";
+                        const percentChange = data.percentChange || 0;
+                        const recentNews = data.recentNews || [];
 
-                            // Selection Trigger: Agar title ya desc me order/deal keyword mila
+                        let matchingDeals = [];
+
+                        recentNews.forEach(news => {
+                            const title = (news.title || "").toLowerCase();
+                            const desc = (news.description || "").toLowerCase();
+
                             if (keywords.some(kw => title.includes(kw) || desc.includes(kw))) {
-                                companyFound = true;
-                                
-                                const cardHTML = `
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="card shadow-lg h-100">
-                                            <div class="card-body d-flex flex-column justify-content-between">
-                                                <div>
-                                                    <span class="badge badge-company mb-2">${companyName}</span>
-                                                    <br>
-                                                    <span class="badge badge-deal mb-3">🎯 SELECTED VIA DEAL</span>
-                                                    <p class="card-text fw-semibold text-white">📢 ${announcement.title}</p>
-                                                    ${announcement.description ? `<p class="text-white-50 small">${announcement.description}</p>` : ''}
+                                matchingDeals.push({
+                                    title: news.title,
+                                    date: news.date || "Recent News",
+                                    url: news.url || "#"
+                                });
+                            }
+                        });
+
+                        // Selection Logic: Agar is stock ki koi bhi order/deal wali news mili, toh card banao
+                        if (matchingDeals.length > 0) {
+                            companyFound = true;
+                            const changeClass = parseFloat(percentChange) >= 0 ? 'text-success' : 'text-danger';
+                            
+                            let dealListHTML = '';
+                            matchingDeals.forEach(deal => {
+                                dealListHTML += `
+                                    <li class="list-group-item bg-dark text-light border-secondary">
+                                        <span class="badge badge-deal mb-1">PROJECT / ORDER</span><br>
+                                        <a href="${deal.url}" target="_blank" class="text-decoration-none text-info fw-semibold">
+                                            📢 ${deal.title}
+                                        </a> <br>
+                                        <small class="text-white-50">Date: ${deal.date}</small>
+                                    </li>`;
+                            });
+
+                            const cardHTML = `
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card shadow-lg h-100">
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div>
+                                                <h5 class="card-title text-warning fw-bold">${stock}</h5>
+                                                <div class="d-flex justify-content-between mb-3">
+                                                    <span>Price: <strong>₹${currentPrice}</strong></span>
+                                                    <span class="${changeClass} fw-bold">${percentChange}%</span>
                                                 </div>
-                                                <div class="mt-3 border-top pt-2">
-                                                    <small class="text-muted d-block">🗓️ Date: ${announcement.date || 'Recent'}</small>
-                                                    ${announcement.url ? `<a href="${announcement.url}" target="_blank" class="btn btn-sm btn-outline-info mt-2 w-100">Read Official PDF / Source</a>` : ''}
-                                                </div>
+                                                <h6 class="text-success border-bottom pb-2">🎯 Selected Announcements:</h6>
+                                                <ul class="list-group list-group-flush">
+                                                    ${dealListHTML}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
-                                `;
-                                container.innerHTML += cardHTML;
-                            }
-                        });
+                                </div>
+                            `;
+                            container.innerHTML += cardHTML;
+                        }
                     }
+                } catch (error) {
+                    console.error(`Error scanning ${stock}:`, error);
                 }
-            } catch (error) {
-                console.error("Error scanning announcements:", error);
             }
 
             loader.style.display = 'none';
@@ -116,7 +155,7 @@
             if (!companyFound) {
                 container.innerHTML = `
                     <div class="col-12 text-center">
-                        <p class="text-muted fs-5">Filhaal API ke recent announcements me koi bhi order ya deal wali company match nahi hui. Kuch der baad market khulne par check karein.</p>
+                        <p class="text-muted fs-5">Sari 35+ companies scan ho gayi, par filhaal kisi ke recent news me deal/order filter match nahi hua.</p>
                     </div>`;
             }
         }
